@@ -1,21 +1,23 @@
 package com.pe.back_qolca.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-
-
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class Rol {
+public class Subcategoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(updatable = false)
     private Long id;
 
-    @Column(unique = true)
+    @Column
     private String nombre;
+
+    @ManyToOne
+    private Categoria categoria;
 }

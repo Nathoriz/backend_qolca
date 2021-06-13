@@ -1,22 +1,21 @@
 package com.pe.back_qolca.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Cliente {
+public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(updatable = false)
     private Long id;
 
-    @Column(nullable = false)
+    @Column
     private String nombre;
-
-    @Column(nullable = false)
-    private String apellido;
 }
