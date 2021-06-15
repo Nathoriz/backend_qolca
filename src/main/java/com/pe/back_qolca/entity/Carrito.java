@@ -1,12 +1,12 @@
 package com.pe.back_qolca.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 import javax.persistence.*;
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Carrito {
@@ -16,10 +16,4 @@ public class Carrito {
 
     @OneToOne
     private Usuario usuario;
-
-//    @OneToMany
-//    private Set<Producto> productos;
-
-//    @ManyToOne
-//    private Producto productos;
 }

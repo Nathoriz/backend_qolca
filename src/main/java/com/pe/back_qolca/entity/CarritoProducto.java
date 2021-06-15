@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
-public class Carrito_Producto {
+public class CarritoProducto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,6 +17,12 @@ public class Carrito_Producto {
     @ManyToOne
     private Producto producto;
 
+    @Column
+    private int cantidad;
+
+    @Column
+    private String selected;
+
 //    @Column
-//    private int cantidad;
+//    private String subtotal;
 }
