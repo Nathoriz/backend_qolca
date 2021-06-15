@@ -1,5 +1,6 @@
 package com.pe.back_qolca.service;
 
+import com.pe.back_qolca.entity.Carrito;
 import com.pe.back_qolca.entity.Usuario;
 import com.pe.back_qolca.repository.UsuarioRepository;
 import lombok.Data;
@@ -13,6 +14,7 @@ import java.util.Optional;
 @Service
 public class UsuarioService {
     private final UsuarioRepository repository;
+    private final CarritoService carritoService;
 
     public List<Usuario> getUsuarios(){
         return repository.findAll();
@@ -20,12 +22,13 @@ public class UsuarioService {
 
     public void addUsuario(Usuario usuario){
         Optional<Usuario> usuarioByEmail = repository.findUsuarioByEmail(usuario.getEmail());
-        usuario.setEstado("Active");
 
         if (usuarioByEmail.isPresent()){
             throw new IllegalStateException("El email se encuentra registrado");
         }
+        usuario.setEstado("Active");
         repository.save(usuario);
+        carritoService.addCarrito(new Carrito(null,usuario));
     }
 
     @Transactional
