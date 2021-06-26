@@ -20,16 +20,15 @@ public class UsuarioController {
         return service.getUsuarios();
     }
 
-    @PostMapping("/login")
-    public ResponseEntity<?> UsuarioLogin(@RequestBody Login login){
-        return service.login(login);
+    @GetMapping("/{id}")
+    public Usuario getUsusario(@PathVariable("id") Long id){
+        return service.getUsuario(id);
     }
 
-//    @PostMapping("/signup")
-//    public void addUsuario(@RequestBody Usuario usuario){
-//        service.signUp(usuario);
-//    }
-
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody Login login){
+        return service.login(login);
+    }
 
     @PostMapping("/signup")
     public ResponseEntity<?> addUsuario(@RequestBody Usuario usuario){
@@ -37,23 +36,23 @@ public class UsuarioController {
     }
 
     @PutMapping(path="/{usuarioid}")
-    public void updateUsuario(
+    public ResponseEntity<?> updateUsuario(
             @PathVariable("usuarioid") Long usuarioID,
             @RequestParam(required = false) String name,
             @RequestParam(required = false) String apellido){
-        service.updateUsuario(usuarioID,name,apellido);
+        return service.updateUsuario(usuarioID,name,apellido);
     }
 
     @PutMapping(path="changepassword/{usuarioid}")
-    public void updatePassword(
+    public ResponseEntity<?> updatePassword(
             @PathVariable("usuarioid") Long usuarioID,
             @RequestParam String contrasenia){
-        service.updatePassword(usuarioID,contrasenia);
+        return service.updatePassword(usuarioID,contrasenia);
     }
 
     @PutMapping(path = "delete/{usuarioid}")
-    public void updateUsuarioStatus(
+    public ResponseEntity<?> updateUsuarioStatus(
             @PathVariable("usuarioid") Long usuarioID){
-        service.updateUsuarioStatus(usuarioID);
+        return service.updateUsuarioStatus(usuarioID);
     }
 }
