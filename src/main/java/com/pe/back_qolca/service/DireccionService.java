@@ -3,12 +3,13 @@ package com.pe.back_qolca.service;
 import com.pe.back_qolca.entity.Direccion;
 import com.pe.back_qolca.repository.DireccionRepository;
 import lombok.Data;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
+
 
 @Data
 @Service
@@ -27,52 +28,96 @@ public class DireccionService {
         return repository.findDireccionByDefaultDireccionAndUsuario_Id(def,id);
     }
 
-    public void addDireccion(Direccion direccion){
-        Direccion direccionop = repository.findDireccionByDefaultDireccionAndUsuario_Id("True", direccion.getUsuario().getId());
-       if(direccionop != null){
-           if(direccion.getDefaultDireccion().equals("True")){
-                direccionop.setDefaultDireccion("False");
-           }
-       }
-        repository.save(direccion);
+    public ResponseEntity<?> addDireccion(Direccion direccion){
+        Map<String, Object> resp = new HashMap<>();
+        Direccion direcionDefault = repository.findDireccionByDefaultDireccionAndUsuario_Id("true", direccion.getUsuario().getId());
+        if(direcionDefault != null){
+            if(repository.findDireccionByDireccion(direccion.getDireccion()) != null){
+                resp.put("Mensaje","La dirección ya existe");
+                return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+            }else{
+                if(direccion.getDefaultDireccion().equals("true") && !direccion.getDireccion().equals("") && direccion.getDireccion().length() > 0) {
+                    direcionDefault.setDefaultDireccion("false");
+                    repository.save(direccion);
+                    resp.put("Mensaje","La dirección se creo exitosamente");
+                    return new ResponseEntity<>(resp, HttpStatus.CREATED);
+                }else if(direccion.getDefaultDireccion().equals("false") && !direccion.getDireccion().equals("") && direccion.getDireccion().length() > 0){
+                    repository.save(direccion);
+                    resp.put("Mensaje","La dirección se creo exitosamente");
+                    return new ResponseEntity<>(resp, HttpStatus.CREATED);
+                }else{
+                    resp.put("Mensaje","Al parecer hubo un problema vuelva a intentarlo más tarde1");
+                    return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+                }
+            }
+       }else {
+            if(direccion.getDireccion().equals("") || direccion.getDireccion().length() == 0){
+                resp.put("Mensaje","Ingrese la dirección");
+                return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+            }else{
+                if(repository.findDireccionByDireccion(direccion.getDireccion()) != null){
+                    resp.put("Mensaje","La dirección ya existe");
+                    return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+                } else{
+                    repository.save(direccion);
+                    resp.put("Mensaje","La dirección se creo exitosamente");
+                    return new ResponseEntity<>(resp, HttpStatus.CREATED);
+                }
+            }
+        }
     }
 
     @Transactional
-    public void updateDireccion(Long id, String persona, String dir, String def) {
-
+    public ResponseEntity<?> updateDireccion(Long id, String dir, String def) {
+        Map<String, Object> resp = new HashMap<>();
         Direccion direccion = repository.findById(id)
                 .orElseThrow(() -> new IllegalStateException("La dirección no existe"));
 
-        Direccion direccionDefaultTrue = repository.findDireccionByDefaultDireccionAndUsuario_Id("True", direccion.getUsuario().getId());
+        Direccion direccionDefaultTrue = repository.findDireccionByDefaultDireccionAndUsuario_Id("true", direccion.getUsuario().getId());
 
-        if (direccionDefaultTrue != null) {
-            if(def != null && def.length() > 0 && !Objects.equals(direccion.getDefaultDireccion(),def)) {
-                if(def.equals("True")) {
-                    direccionDefaultTrue.setDefaultDireccion("False");
+            if(!Objects.equals(direccion.getDefaultDireccion(),def) ||
+                    (!dir.equals("") && dir.length() > 0 && !Objects.equals(direccion.getDireccion(),dir))) {
+                if(direccionDefaultTrue != null && def.equals("true")) {
+                    direccionDefaultTrue.setDefaultDireccion("false");
                     direccion.setDefaultDireccion(def);
+                    direccion.setDireccion(dir);
+                    resp.put("Mensaje","La dirección se actualizó con exito");
+                    return new ResponseEntity<>(resp, HttpStatus.OK);
+                }else if (direccionDefaultTrue != null && def.equals("false")){
+                    direccion.setDefaultDireccion(def);
+                    direccion.setDireccion(dir);
+                    resp.put("Mensaje","La dirección se actualizó con exito");
+                    return new ResponseEntity<>(resp, HttpStatus.OK);
                 }else{
                     direccion.setDefaultDireccion(def);
+                    direccion.setDireccion(dir);
+                    resp.put("Mensaje","La dirección se actualizó con exito");
+                    return new ResponseEntity<>(resp, HttpStatus.OK);
+                }
+            }else{
+                if(Objects.equals(direccion.getDefaultDireccion(),def) && Objects.equals(direccion.getDireccion(),dir)){
+                    resp.put("Mensaje","Los datos ingresados es igual a su información actual");
+                    return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+                } else if(dir.equals("") && dir.length() == 0){
+                    resp.put("Mensaje","Ingrese la dirección");
+                    return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+                }else{
+                resp.put("Mensaje","Se encontró un error vuelva a intentarlo más tarde");
+                return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
                 }
             }
-        }else{
-            if(def != null && def.length() > 0 && !Objects.equals(direccion.getDefaultDireccion(),def)) {
-                direccion.setDefaultDireccion(def);
-            }
-        }
-
-        if(persona != null && persona.length() > 0 && !Objects.equals(direccion.getPersona(),persona)){
-            direccion.setPersona(persona);
-        }
-        if(dir != null && dir.length() > 0 && !Objects.equals(direccion.getDireccion(),dir)){
-            direccion.setDireccion(dir);
-        }
     }
 
-    public void deleteDireccion(Long id){
+    public ResponseEntity<?> deleteDireccion(Long id){
         boolean exists = repository.existsById(id);
+        Map<String, Object> resp = new HashMap<>();
         if(!exists){
-            throw new IllegalStateException("La dirección no existe");
+            resp.put("Mensaje","La dirección ya no se encuentra disponible");
+            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
         }
         repository.deleteById(id);
+        resp.put("Mensaje","La dirección se eliminó con exito");
+        return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
     }
+
 }

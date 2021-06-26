@@ -10,4 +10,5 @@ import java.util.List;
 public interface DireccionRepository extends JpaRepository<Direccion,Long> {
     public List<Direccion> findAllByUsuario_Id(Long id);
     public Direccion findDireccionByDefaultDireccionAndUsuario_Id(String def, Long id);
+    public Direccion findDireccionByDireccion(String direccion);
 }

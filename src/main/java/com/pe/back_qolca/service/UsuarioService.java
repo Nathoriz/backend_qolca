@@ -30,10 +30,10 @@ public class UsuarioService {
         Map<String, Object> resp = new HashMap<>();
         Optional<Usuario> usuarioByEmail = repository.findUsuarioByEmail(usuario.getEmail());
         if (usuarioByEmail.isPresent()){
-            resp.put("Message","El email ingresado ya se encuentra registrado");
+            resp.put("Mensaje","El email ingresado ya se encuentra registrado");
         }
         usuario.setEstado("Active");
-        resp.put("Message","El usuario ha sido registrado");
+        resp.put("Mensaje","El usuario ha sido registrado");
         repository.save(usuario);
         carritoService.addCarrito(new Carrito(null,usuario));
         return new ResponseEntity<>(resp,HttpStatus.CREATED);

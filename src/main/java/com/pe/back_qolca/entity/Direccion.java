@@ -18,12 +18,9 @@ public class Direccion {
     @ManyToOne
     private Usuario usuario;
 
-    @Column
-    private String persona;
+//    private String persona;
 
-    @Column
     private String direccion;
 
-    @Column
     private String defaultDireccion;
 }
