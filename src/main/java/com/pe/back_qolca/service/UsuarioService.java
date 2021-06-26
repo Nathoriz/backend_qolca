@@ -28,38 +28,84 @@ public class UsuarioService {
 
     public ResponseEntity<?> signUp(Usuario usuario){
         Map<String, Object> resp = new HashMap<>();
+        String passwordFormat = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}";
+        String emailFormat="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
         Optional<Usuario> usuarioByEmail = repository.findUsuarioByEmail(usuario.getEmail());
         if (usuarioByEmail.isPresent()){
             resp.put("Mensaje","El email ingresado ya se encuentra registrado");
+            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+        }if(usuario.getNombre().isEmpty() && usuario.getApellido().isEmpty() && usuario.getEmail().isEmpty() && usuario.getContrasenia().isEmpty()){
+            resp.put("Mensaje","Debe llenar todos los campos");
+            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
         }
-        usuario.setEstado("Active");
-        resp.put("Mensaje","El usuario ha sido registrado");
-        repository.save(usuario);
-        carritoService.addCarrito(new Carrito(null,usuario));
-        return new ResponseEntity<>(resp,HttpStatus.CREATED);
+        else if(usuario.getNombre().isEmpty()){
+            resp.put("Mensaje","Ingrese su nombre");
+            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+        }else if(usuario.getApellido().isEmpty()) {
+            resp.put("Mensaje","Ingrese su apellido");
+            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+        }else if(usuario.getEmail().isEmpty()) {
+            resp.put("Mensaje","Ingrese su email");
+            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+//        }else if(!usuario.getEmail().matches(emailFormat)){
+//            resp.put("Mensaje","El email ingresado no es valido");
+//            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+        }else if(usuario.getContrasenia().isEmpty()) {
+            resp.put("Mensaje","Ingrese su contrasenia");
+            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+//        } else if(!usuario.getContrasenia().matches(passwordFormat)){
+//            resp.put("Mensaje","La contraseña debe ser mayor a 8 carácteres, tener al menos un dígito, caracter especial, mayuscula, no se permite espacios.");
+//            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+        }else{
+            usuario.setNombre(capitalize(usuario.getNombre()));
+            usuario.setApellido(capitalize(usuario.getApellido()));
+            usuario.setEmail(usuario.getEmail().toLowerCase(Locale.ROOT));
+            usuario.setEstado("Active");
+            repository.save(usuario);
+            carritoService.addCarrito(new Carrito(null,usuario));
+            resp.put("Mensaje","El usuario ha sido registrado");
+            return new ResponseEntity<>(resp,HttpStatus.CREATED);
+        }
     }
 
     public ResponseEntity<?> login(Login login){
-        String email = login.getEmail();
+        String email = login.getEmail().toLowerCase(Locale.ROOT);
         String password = login.getContrasenia();
         Map<String, Object> resp = new HashMap<>();
-        if(email.isEmpty()) resp.put("Error","Ingrese el email");
-        if(password.isEmpty()) resp.put("Error","Ingrese la contraseña");
+        if(email.isEmpty()){
+            resp.put("Mensaje","Ingrese el email");
+            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+        }
+        if(password.isEmpty()) {
+            resp.put("Mensaje","Ingrese la contraseña");
+            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+        }
         if(repository.existsUsuarioByEmailAndContrasenia(email, password)){
-            if(repository.findUsuarioByEmail(email).get().getEstado().equals("True")){
+            if(repository.findUsuarioByEmail(email).get().getEstado().equals("Active")){
                 Usuario userlog = repository.findUsuarioByEmail(email).orElse(null);
                 UsuarioInfo usuarioInfo = MHelpers.modelMapper().map(userlog, UsuarioInfo.class);
                 resp.put("Mensaje", "Credenciales válidas");
                 resp.put("Usuario", usuarioInfo);
                 return new ResponseEntity<>(resp, HttpStatus.OK);
-            }else {
+            }else if(repository.findUsuarioByEmail(email).get().getEstado().equals("Inactive")){
                 resp.put("Mensaje", "El usuario ya no se encuentra activo");
+                return new ResponseEntity<>(resp, HttpStatus.UNAUTHORIZED);
+            }else{
+                resp.put("Mensaje", "Se generó un error, vuelva a intentarlo más tarde :c");
                 return new ResponseEntity<>(resp, HttpStatus.UNAUTHORIZED);
             }
         }else {
-            if(repository.existsUsuarioByEmail(email)) resp.put("Error", "Su contraseña es incorrecta");
-            if(!repository.existsUsuarioByEmailAndContrasenia(email,password)) resp.put("Error", "El usuario o contraseña es incorrecta");
-            return new ResponseEntity<>(resp, HttpStatus.UNAUTHORIZED);
+            if(repository.existsUsuarioByEmail(email)) {
+                resp.put("Mensaje", "Su contraseña es incorrecta");
+                return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+            }else if(!repository.existsUsuarioByEmailAndContrasenia(email,password)) {
+                resp.put("Mensaje", "El usuario o contraseña son incorrectos");
+                return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+            }else{
+                resp.put("Mensaje", "Se generó un error, vuelva a intentarlo más tarde :(");
+                return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+            }
         }
     }
 
@@ -127,4 +173,6 @@ public class UsuarioService {
         }
         return match.appendTail(strbf).toString();
     }
+
+
 }
