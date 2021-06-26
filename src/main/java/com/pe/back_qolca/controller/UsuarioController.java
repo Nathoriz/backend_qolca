@@ -2,7 +2,9 @@ package com.pe.back_qolca.controller;
 
 import com.pe.back_qolca.entity.Usuario;
 import com.pe.back_qolca.service.UsuarioService;
+import com.pe.back_qolca.utils.dto.Login;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,6 +18,11 @@ public class UsuarioController {
     @GetMapping("/listar")
     public List<Usuario> getUsuarios(){
         return service.getUsuarios();
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> UsuarioLogin(@RequestBody Login login){
+        return service.login(login);
     }
 
     @PostMapping("/signup")

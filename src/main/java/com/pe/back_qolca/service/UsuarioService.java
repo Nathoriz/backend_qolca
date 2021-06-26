@@ -3,12 +3,16 @@ package com.pe.back_qolca.service;
 import com.pe.back_qolca.entity.Carrito;
 import com.pe.back_qolca.entity.Usuario;
 import com.pe.back_qolca.repository.UsuarioRepository;
+import com.pe.back_qolca.utils.MHelpers;
+import com.pe.back_qolca.utils.dto.Login;
+import com.pe.back_qolca.utils.dto.UsuarioInfo;
 import lombok.Data;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+
+import java.util.*;
 
 @Data
 @Service
@@ -16,9 +20,9 @@ public class UsuarioService {
     private final UsuarioRepository repository;
     private final CarritoService carritoService;
 
-    public List<Usuario> getUsuarios(){
-        return repository.findAll();
-    }
+    public List<Usuario> getUsuarios(){ return repository.findAll(); }
+
+    public Usuario getUsuario(Long id){return repository.findById(id).orElse(null);}
 
     public void addUsuario(Usuario usuario){
         Optional<Usuario> usuarioByEmail = repository.findUsuarioByEmail(usuario.getEmail());
@@ -29,6 +33,25 @@ public class UsuarioService {
         usuario.setEstado("Active");
         repository.save(usuario);
         carritoService.addCarrito(new Carrito(null,usuario));
+    }
+
+    public ResponseEntity<?> login(Login login){
+        String email = login.getEmail();
+        String password = login.getContrasenia();
+        Map<String, Object> resp = new HashMap<>();
+        if(email.isEmpty()) resp.put("Error","Ingrese el email");
+        if(password.isEmpty()) resp.put("Error","Ingrese la contraseña");
+        if(repository.existsUsuarioByEmailAndContrasenia(email, password)){
+            Usuario userlog = repository.findUsuarioByEmail(email).orElse(null);
+            UsuarioInfo usuarioInfo = MHelpers.modelMapper().map(userlog, UsuarioInfo.class);
+            resp.put("Message", "Credenciales válidas");
+            resp.put("Usuario", usuarioInfo);
+            return new ResponseEntity<>(resp, HttpStatus.OK);
+        }else {
+            if(repository.existsUsuarioByEmail(email)) resp.put("Error", "Su contraseña es incorrecta");
+            if(!repository.existsUsuarioByEmailAndContrasenia(email,password)) resp.put("Error", "El usuario o contraseña es incorrecta");
+            return new ResponseEntity<>(resp, HttpStatus.UNAUTHORIZED);
+        }
     }
 
     @Transactional
