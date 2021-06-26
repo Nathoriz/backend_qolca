@@ -346,7 +346,7 @@ INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_
 
 
 --EMPANADAS
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '3 unidades','Combo 03 empanadas de carne + 03 empanadas de pollo + 01 Coca Cola 1 L','QOLCA',14.90,50,' https://i.ibb.co/vcpSXL8/Combo-03-empanadas-de-carne-03-empanadas-de-pollo-01-Coca-Cola-1-L.png',18);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ('3 unidades','Combo 03 empanadas de carne + 03 empanadas de pollo + 01 Coca Cola 1 L','QOLCA',14.90,50,' https://i.ibb.co/vcpSXL8/Combo-03-empanadas-de-carne-03-empanadas-de-pollo-01-Coca-Cola-1-L.png',18);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ('4 unidades','Combo 04 Empanadas de Carne + Pepsi 1 L','QOLCA',8.90,50,' https://i.ibb.co/wLcYRRg/Combo-04-Empanadas-de-Carne-Pepsi-1-L.png',18);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ('6 unidades','Combo 06 Empanadas de Pollo + 01 Coca Cola 1L','QOLCA',14.90,50,'https://i.ibb.co/LnDG4qM/Combo-06-Empanadas-de-Pollo-01-Coca-Cola-1-L.png',18);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ('1 unidad','Empanada de Pollo Tambo','QOLCA',2.50,50,'https://i.ibb.co/74PdggP/Empanada-de-Pollo-Tambo.webp',18);
@@ -356,7 +356,7 @@ INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ('1 unidad','Combo 01 empanada de pollo + 01 empanada de carne + 01 pepsi 355 ml','UNIVERSAL',6.50,50,'https://i.ibb.co/3S10mvt/Combo-01-empanada-de-pollo-01-empanada-de-carne-01-pepsi-355-ml.png',18);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ('4 unidades','Combo 04 Empanadas Mixta + 1 Pepsi 1 L','QOLCA',8.90,50,'https://i.ibb.co/R3rDdJq/Combo-04-Empanadas-Mixta-1-Pepsi-1-L.png',18);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ('4 unidades','Combo 04 Empanadas Pollo + 1 Pepsi 1 L','QOLCA',8.90,50,'https://i.ibb.co/SB2h9dx/Combo-04-Empanadas-Pollo-1-Pepsi-1-L.png',18);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ('1 unidad','Empanada Ají de Gallina Tambo','1 unidad','QOLCA',3.50,50,'https://i.ibb.co/MhcJ09z/Empanada-Aj-de-Gallina-Tambo.png',18);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ('1 unidad','Empanada Ají de Gallina Tambo','QOLCA',3.50,50,'https://i.ibb.co/MhcJ09z/Empanada-Aj-de-Gallina-Tambo.png',18);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ('1 unidad','Empanada Mixta Tambo','QOLCA',2.50,50,'https://i.ibb.co/gJ9VyJ3/Empanada-Mixta-Tambo.webp',18);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ('1 unidad','Empanada de Carne Tambo','QOLCA',2.50,50,'https://i.ibb.co/jRW6rRM/Empanada-de-Carne-Tambo.webp',18);
 
@@ -368,7 +368,7 @@ INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ('2 unidades','Combo Enrollado de Lechon Cedro + Pepsi 1 L','QOLCA',14.50,50,'https://i.ibb.co/YNKCD3m/Combo-Enrollado-de-Lechon-Cedro-Pepsi-1-L.png',19);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ('2 unidades','Combo Enrollado de Pollo Cedro + Pepsi 1 L','QOLCA',14.50,50,'https://i.ibb.co/42Xrj6r/Combo-Enrollado-de-Pollo-Cedro-Pepsi-1-L.png',19);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ('3 unidades','Enrollado de Jamón y Queso El Cedro','EL CEDRO',7.50,50,'https://i.ibb.co/SfTdKVY/Enrollado-de-Jam-n-y-Queso-El-Cedro.png',19);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ('1 unidad','Enrollado de Pollo El Cedro ','EL CEDRO',16.10,50,'https://i.ibb.co/DbdsPN8/Enrollado-de-Pollo-El-Cedro.png',19);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ('1 unidad','Enrollado de Pollo El Cedro','EL CEDRO',16.10,50,'https://i.ibb.co/DbdsPN8/Enrollado-de-Pollo-El-Cedro.png',19);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ('1 unidad','Enrollado de Lechón El Cedro','EL CEDRO',6.50,50,'https://i.ibb.co/pZjXvmh/Enrollado-de-Lech-n-El-Cedro.png',19);
 
 
@@ -413,22 +413,22 @@ INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_
 
 
 --BASICOS PARA LA DESPENSA
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '750 g','Arroz Extra Corazón del Fundo','CORAZÓN DEL FUNDO',2.70,50,'https://i.ibb.co/ryh6HSb/1-Arroz-Extra-Coraz-n-del-Fundo.png',25);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '180 g','Tamal de maíz Casa Verde ','CASA VERDE',4.90,50,'https://i.ibb.co/SP6mZ7m/2-Tamal-de-ma-z-Casa-Verde.png',25);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '1 Lt','Leche UHT Gloria sin Lactosa ','GLORIA',4.50,50,'https://i.ibb.co/BKSyf55/3-Leche-UHT-Gloria-sin-Lactosa.jpg',25);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '480 g','01 Mermelada de Fresa A1 + 01 Pan Blanco Bimbo Mediano','BIMBO',9.50,50,'https://i.ibb.co/FzKSGKD/4-01-Mermelada-de-Fresa-A1-01-Pan-Blanco-Bimbo-Mediano.png',25);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ('100 gr','Aji Criollo Saborissima ','SABORISSIMA',2.50,50,'https://i.ibb.co/wJLD5K6/5-Aji-Criollo-Saborissima.png',25);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '100 gr','Mayonesa Saborissima Baja En Grasa ','SABORISSIMA',2.50,50,'https://i.ibb.co/7JmZygL/6-Mayonesa-Saborissima-Baja-En-Grasa.png',25);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '200 gr','Chocolatada en polvo Miskisimoo Doypack  ','MISKISIMOO',8.90,50,'https://i.ibb.co/JxZykZC/7-Chocolatada-en-polvo-Miskisimoo-Doypack.png',25);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES (  '350 g','Mermelada Vive Day fresa pote ','QOLCA',3.00,50,'https://i.ibb.co/RQWYgY7/8-Mermelada-Vive-Day-fresa-pote.png',25);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '450 g','Lenteja Bebé Corazón Del Fundo ','CORAZÓN DEL FUNDO',2.70,50,'https://i.ibb.co/TR4pFYf/9-Lenteja-Beb-Coraz-n-Del-Fundo.png',25);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '200 g','Mostaza Walibi Doypack ','WALIBI',2.70,50,'https://i.ibb.co/bLmJrjW/10-Mostaza-Walibi-Doypack.jpg',25);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '1 Lt','Aceite Primor Clásico ','PRIMOR',8.60,50,'https://i.ibb.co/Qn5PJ4n/11-Aceite-Primor-Cl-sico.jpg',25);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES (  '80 g','Cereal Krunchis Maca Trigo','KRUNCHIS',1.90,50,'https://i.ibb.co/cNrzFYS/12-Cereal-Krunchis-Maca-Trigo.png',25);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '80 g', ,'Cereal Krunchis Maca Aritos ','KRUNCHIS',1.90,50,'https://i.ibb.co/YQrcn0x/13-Cereal-Bixies-hojuelas-de-maiz.png',25);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '200 g','Ketchup Libbys Doypack','LIBBYS',3.50,50,'https://i.ibb.co/wNqpqXP/14-Ketchup-Libbys-Doypack.jpg',25);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '750 gr','Arroz Extra Corazón del Fundo','CORAZÓN DEL FUNDO',2.70,50,'https://i.ibb.co/ryh6HSb/1-Arroz-Extra-Coraz-n-del-Fundo.png',25);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '180 gr','Tamal de maíz Casa Verde','CASA VERDE',4.90,50,'https://i.ibb.co/SP6mZ7m/2-Tamal-de-ma-z-Casa-Verde.png',25);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '1 Lt','Leche UHT Gloria sin Lactosa','GLORIA',4.50,50,'https://i.ibb.co/BKSyf55/3-Leche-UHT-Gloria-sin-Lactosa.jpg',25);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '480 gr','01 Mermelada de Fresa A1 + 01 Pan Blanco Bimbo Mediano','BIMBO',9.50,50,'https://i.ibb.co/FzKSGKD/4-01-Mermelada-de-Fresa-A1-01-Pan-Blanco-Bimbo-Mediano.png',25);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ('100 gr','Aji Criollo Saborissima','SABORISSIMA',2.50,50,'https://i.ibb.co/wJLD5K6/5-Aji-Criollo-Saborissima.png',25);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '100 gr','Mayonesa Saborissima Baja En Grasa','SABORISSIMA',2.50,50,'https://i.ibb.co/7JmZygL/6-Mayonesa-Saborissima-Baja-En-Grasa.png',25);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '200 gr','Chocolatada en polvo Miskisimoo Doypack','MISKISIMOO',8.90,50,'https://i.ibb.co/JxZykZC/7-Chocolatada-en-polvo-Miskisimoo-Doypack.png',25);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES (  '350 gr','Mermelada Vive Day fresa pote','QOLCA',3.00,50,'https://i.ibb.co/RQWYgY7/8-Mermelada-Vive-Day-fresa-pote.png',25);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '450 gr','Lenteja Bebé Corazón Del Fundo','CORAZÓN DEL FUNDO',2.70,50,'https://i.ibb.co/TR4pFYf/9-Lenteja-Beb-Coraz-n-Del-Fundo.png',25);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '200 gr','Mostaza Walibi Doypack','WALIBI',2.70,50,'https://i.ibb.co/bLmJrjW/10-Mostaza-Walibi-Doypack.jpg',25);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '1 Lt','Aceite Primor Clásico','PRIMOR',8.60,50,'https://i.ibb.co/Qn5PJ4n/11-Aceite-Primor-Cl-sico.jpg',25);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES (  '80 gr','Cereal Krunchis Maca Trigo','KRUNCHIS',1.90,50,'https://i.ibb.co/cNrzFYS/12-Cereal-Krunchis-Maca-Trigo.png',25);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '80 gr','Cereal Krunchis Maca Aritos ','KRUNCHIS',1.90,50,'https://i.ibb.co/YQrcn0x/13-Cereal-Bixies-hojuelas-de-maiz.png',25);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '200 gr','Ketchup Libbys Doypack','LIBBYS',3.50,50,'https://i.ibb.co/wNqpqXP/14-Ketchup-Libbys-Doypack.jpg',25);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '200 ml','Bebida Láctea Gloria Complete Vainilla','GLORIA',4.90,50,'https://i.ibb.co/23y0pMp/15-Bebida-L-ctea-Gloria-Complete-Vainilla.jpg',25);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '400 g','Leche Evaporada Gloria Niños','GLORIA',3.30,50,'https://i.ibb.co/8gJ104y/16-Leche-Evaporada-Gloria-Ni-os.jpg',25);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES ( '400 gr','Leche Evaporada Gloria Niños','GLORIA',3.30,50,'https://i.ibb.co/8gJ104y/16-Leche-Evaporada-Gloria-Ni-os.jpg',25);
 
 
 --ALIMENTOS EN CONSERVA
@@ -510,33 +510,33 @@ INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('80 g','Maní Japonés Nut Snack Original','NUT SNACK',1.60,50,'https://i.ibb.co/sVtxZwG/Man-Japon-s-Nut-Snack-Original.web',32);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('80 g','Maní Nut Snack','NUT SNACK', 1.60,50,'https://i.ibb.co/drdrJmP/Man-Nut-Snack.webp',32);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('250 g','Maní Con Pasas Villa Natura','VILLA NATURA',9.20,50,'https://i.ibb.co/GHRbxyF/Man-Con-Pasas-Villa-Natura.webp',32);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('180 g','Maní Oriental Granuts,GRANUTS', 5.90,50,'https://i.ibb.co/7K1snRv/Man-Oriental-Granuts.webp',32);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('180 g','Maní Oriental Granuts','GRANUTS', 5.90,50,'https://i.ibb.co/7K1snRv/Man-Oriental-Granuts.webp',32);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('80 g','Maní Con Pasas Villa Natura','VILLA NATURA',3.40,50,'https://i.ibb.co/hMntQvY/Man-Con-Pasas-Villa-Natura.webp',32);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('100 g','Snack Inka Corn Maíz Gigante Chile Picante','INKA CORN',5.70,50,'https://i.ibb.co/VvN8X9J/Snack-Inka-Corn-Ma-z-Gigante-Chile-Picante.webp',32);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('100 g','Snack Inka Corn Maíz Gigante Original,INKA CORN',5.70,50,'https://i.ibb.co/Zh9M7Fr/Snack-Inka-Corn-Ma-z-Gigante-Original.webp',32);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('100 g','Maní Crocante Picante Karinto,KARINTO',3.40,50,'https://i.ibb.co/ZV5F5X0/Man-Crocante-Picante-Karinto.webp',32);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('100 g','Snack Inka Corn Maíz Gigante Original','INKA CORN',5.70,50,'https://i.ibb.co/Zh9M7Fr/Snack-Inka-Corn-Ma-z-Gigante-Original.webp',32);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('100 g','Maní Crocante Picante Karinto','KARINTO',3.40,50,'https://i.ibb.co/ZV5F5X0/Man-Crocante-Picante-Karinto.webp',32);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('100 g','Maní Natural Karinto','KARINTO',3.40,50,'https://i.ibb.co/6ZV001q/Man-Natural-Karinto.webp',32);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('100 g','Maní Salado Karinto,KARINTO',3.40,50,'https://i.ibb.co/F6mNxs9/Man-Salado-Karinto.webp',32);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('100 g','Maní Salado Karinto','KARINTO',3.40,50,'https://i.ibb.co/F6mNxs9/Man-Salado-Karinto.webp',32);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('35 g','Maní Engalletado Salado Karinto','KARINTO',1.50,50,'https://i.ibb.co/YjfDRmT/Man-Engalletado-Salado-Karinto.webp',32);
 
 
 --PAPAS EMBOLSADAS
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('150 g','Papas Lays Ondas Natural' ,'FRITO LAY',5.50,50,'https://i.ibb.co/vPXjpDJ/Papas-Lays-Ondas-Natural.webp',33);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('160 g','Snack Lays Clásicas','FRITO LAY',5.50,50,'https://i.ibb.co/SPr8vmv/Snack-Lays-Cl-sicas.webp',33);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('150 g','Snack Lays Ondas Picante,FRITO LAY',5.50,50,'https://i.ibb.co/XLt0bjP/Snack-Lays-Ondas-Picante.webp',33);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('150 g','Snack Lays Ondas Picante','FRITO LAY',5.50,50,'https://i.ibb.co/XLt0bjP/Snack-Lays-Ondas-Picante.webp',33);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('115 g','Tostones Inka Chips 100 g + Papas Inka Chips Cusqueña Albahaca y Oliva x 115 g','QOLCA',10.20,50,'https://i.ibb.co/BT3F4RX/Tostones-Inka-Chips-100-g-Papas-Inka-Chips-Cusque-a.png',33);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('142 g','Papas Inka Chips Jalapeño','INKA CHIPS',7.70,50,'https://i.ibb.co/KmvC0k2/Papas-Inka-Chips-Jalape-o.webp',33);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('115 g','Papas Inka Chips Cusqueña finas hierbas y lima' ,'INKA CHIPS',8.00,50,'https://i.ibb.co/phFY8yD/Papas-Inka-Chips-Cusque-a-finas-hierbas-y-lima.png',33);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('115 gr','Papas Inka Chips Cusqueña paprika y cebolla ahumada' ,'INKA CHIPS',8.00,50,'https://i.ibb.co/T4KnVWw/Papas-Inka-Chips-Cusque-a-paprika-y-cebolla-ahumada.png',33);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('115 gr','Papas Inka Chips Cusqueña tomate albahaca y oliva' ,'INKA CHIPS',8.00,50,'https://i.ibb.co/qjVjVqg/Papas-Inka-Chips-Cusque-a-tomate-albahaca-y-oliva.png',33);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('180 gr','Nachos Jappy snack picantes,JAPPY',6.90,50,'https://i.ibb.co/DDBfz87/Nachos-Jappy-snack-picant',33);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('160 gr','Papas Jappy snack ondas picantes,JAPPY',6.70,50,'https://i.ibb.co/vc2K0n8/Papas-Jappy-snack-ondas-picantes.png',33);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('180 gr','Nachos Jappy snack picantes','JAPPY',6.90,50,'https://i.ibb.co/DDBfz87/Nachos-Jappy-snack-picant',33);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('160 gr','Papas Jappy snack ondas picantes','JAPPY',6.70,50,'https://i.ibb.co/vc2K0n8/Papas-Jappy-snack-ondas-picantes.png',33);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('160 gr','Papas Jappy snack picantes','JAPPY',6.70,50,'https://i.ibb.co/FHzt7fF/Papas-Jappy-snack-picantes.png',33);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('160 g','Papas Jappy Snack Clásicas','JAPPY',6.70,50,'https://i.ibb.co/cJHvgpS/Papas-Jappy-snack-Clasicas.png',33);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('85 g','Papas Lays Clásicas','FRITO LAY',3.40,50,'https://i.ibb.co/XDJtHR2/Papas-Lays-Cl-sicas.jpg',33);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('85 g','Snack Lays Twopack Clásica 85 g + Doritos' ,'FRITO LAY',5.90,50,'https://i.ibb.co/VVTdLvx/Snack-Lays-Twopack-Cl-sica.jpg',33);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('142 g','Snack Inka Chips Papa Artesanal','INKA CHIPS',7.70,50,'https://i.ibb.co/1TNKrFn/Snack-Inka-Chips-Papa-Artesanal.webp',33);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('142 g','Snack Inka Chips Papas Surtidas Fourpack' ,'INKA CHIPS',7.70,50,'https://i.ibb.co/RSptZRJ/Snack-Inka-Chips-Papas-Surtidas-Fourpack.png',33);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('142 g','Snack Inka Chips Papas Surtidas Fourpack','INKA CHIPS',7.70,50,'https://i.ibb.co/RSptZRJ/Snack-Inka-Chips-Papas-Surtidas-Fourpack.png',33);
 
 
 --PAPAS ENVASADAS
@@ -544,14 +544,14 @@ INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('170 gr','Papas Papiricas Pollo a la Brasa' ,'PAPIRICAS',6.00,50,'https://i.ibb.co/zSs16kY/Papas-Papiricas-Pollo-a-la-Brasa.png',34);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('180 gr','Papas Papiricas Natural','PAPIRICAS',6.00,50,'https://i.ibb.co/chVdyGj/Papas-Papiricas-Natural.png',34);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('180 gr','Papas Papiricas Picante','PAPIRICAS',6.00,50,'https://i.ibb.co/yQ8rgsG/Papas-Papiricas-Picante.png',34);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('100 gr,Combo 01 Papas Kona + 01 Coca Cola 1L + 01 Movie Pop','QOLCA',10.90,50,'https://i.ibb.co/XYQzqvD/Combo-01-Papas-Kona-01-Coca-Cola-1-L-01-Movie-Pop.png',34);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('100 gr','Papas Kona Select queso','KONA',6.70,50  'https://i.ibb.co/pbzCjsB/Papas-Kona-Select-queso.png',34);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('100 gr','Combo 01 Papas Kona + 01 Coca Cola 1L + 01 Movie Pop','QOLCA',10.90,50,'https://i.ibb.co/XYQzqvD/Combo-01-Papas-Kona-01-Coca-Cola-1-L-01-Movie-Pop.png',34);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('100 gr','Papas Kona Select queso','KONA',6.70,50,'https://i.ibb.co/pbzCjsB/Papas-Kona-Select-queso.png',34);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('100 gr','Papas Kona Select crema y cebolla','KONA',6.70,50,'https://i.ibb.co/DkHTCFN/Papas-Kona-Select-crema-y-cebolla.png',34);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('100 gr','Papas Kona Select original' ,'KONA',6.70,50,'https://i.ibb.co/nb9LkyB/Papas-Kona-Select-original.png',34);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('140 g','Papas Kryzpo Sabor a Crema Cebolla ','KRYZPO',7.70,50,'https://i.ibb.co/hdY2Tx8/Papas-Kryzpo-Sabor-a-Crema-Cebolla.webp',34);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('100 gr','Papas Kona Select original','KONA',6.70,50,'https://i.ibb.co/nb9LkyB/Papas-Kona-Select-original.png',34);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('140 g','Papas Kryzpo Sabor a Crema Cebolla','KRYZPO',7.70,50,'https://i.ibb.co/hdY2Tx8/Papas-Kryzpo-Sabor-a-Crema-Cebolla.webp',34);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('140 g','Papas Kryzpo Sabor Original','KRYZPO',7.70,50,'https://i.ibb.co/q0vZwC5/Papas-Kryzpo-Sabor-Original-140.webp',34);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('37 g','Papas Pringles Original','PRINGLES',4.90,50,'https://i.ibb.co/d6H3M48/Papas-Pringles-Original-37.webp',34);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('124 g','Snack Pringles Sour & Cream Onion','PRINGLES',9,50,50,'https://i.ibb.co/kKvR7S0/Snack-Pringles-Sour-Cream-Onion.png',34);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('124 g','Snack Pringles Sour & Cream Onion','PRINGLES',9.50,50,'https://i.ibb.co/kKvR7S0/Snack-Pringles-Sour-Cream-Onion.png',34);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('124 g','Snack Pringles Queso','PRINGLES',9.50,50,'https://i.ibb.co/SKHqvWX/Snack-Pringles-Queso.png',34);
 
 
@@ -581,8 +581,8 @@ INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('100 gr','Doritos Flamin Hot','FRITO LAY',5.90,50,'https://i.ibb.co/kQpPd77/Doritos-Flamin-Hot.png',36);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('180 g','Nachos Jappy Snack Original','JAPPY',7.00,50,'https://i.ibb.co/Ctjnxzs/Nachos-Jappy-Snack-Original.jpg',36);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('80 g','Pop Corn Act II Extra Mantequilla','ACT II',3.00,50,'https://i.ibb.co/Ycjxgm1/Pop-Corn-Act-II-Extra-Mantequilla.webp',36);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('80 g' ,'Pop Corn Act II Mantequilla','ACT II',3.00,50,'https://i.ibb.co/bHFMPv0/Pop-Corn-Act-II-Mantequilla.jpg',36);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('80 g','Pop Corn Act II Natural','ACT II',3,00,50,'https://i.ibb.co/MPx02Kv/Pop-Corn-Act-II-Natural-80.jpg',36);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('80 g','Pop Corn Act II Mantequilla','ACT II',3.00,50,'https://i.ibb.co/bHFMPv0/Pop-Corn-Act-II-Mantequilla.jpg',36);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('80 g','Pop Corn Act II Natural','ACT II',3.00,50,'https://i.ibb.co/MPx02Kv/Pop-Corn-Act-II-Natural-80.jpg',36);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('190 g','Snack Chizitos Queso Fiesta','FRITO LAY',6.50,50,'https://i.ibb.co/gjvtfLJ/Snack-Chizitos-Queso-Fiesta.webp',36);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('95 gr','Pop Corn Jappy Extra Mantequilla','JAPPY',4.60,50,'https://i.ibb.co/QYKhjdb/Pop-Corn-Jappy-Extra-Mantequilla.png',36);
 
@@ -617,8 +617,8 @@ INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_
 --PANES
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('480 g','Pan Bimbo Blanco Mediano','BIMBO',6.90,50,'https://i.ibb.co/J3hgP9F/Pan-Bimbo-Blanco-Mediano.png',39);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('480 g','Combo Pan Blanco Bimbo Mediano x 480 g + Conserva Trozos de Atún Campomar x 170 g','QOLCA',11.90,50,'https://i.ibb.co/8xQGCDt/Combo-Pan-Blanco-Bimbo-Mediano.png',39);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('144 gr','Tostadas Bimbo Integrales,BIMBO',4.50,50,'https://i.ibb.co/YLhSZz3/Tostadas-Bimbo-Integrales.png',39);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('128 gr','Tostadas Bimbo Clásicas,BIMBO',4.50,50,'https://i.ibb.co/XDVCKFf/Tostadas-Bimbo-Cl-sicas.png',39);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('144 gr','Tostadas Bimbo Integrales','BIMBO',4.50,50,'https://i.ibb.co/YLhSZz3/Tostadas-Bimbo-Integrales.png',39);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('128 gr','Tostadas Bimbo Clásicas','BIMBO',4.50,50,'https://i.ibb.co/XDVCKFf/Tostadas-Bimbo-Cl-sicas.png',39);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('310 g','Tortilla Bimbo','BIMBO',8.60,50,'https://i.ibb.co/B4vpbgc/Tortilla-Bimbo.webp',39);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('425 g','Pan Bimbo Hamburguesa','BIMBO',6.50,50,'https://i.ibb.co/wYcCZFB/Pan-Bimbo-Hamburguesa.webp',39);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('480 g','Pan Bimbo Integral Prebiótico','BIMBO',6.90,50,'https://i.ibb.co/ySTyrqd/Pan-Bimbo-Integral-Prebi-tico.webp',39);
@@ -648,7 +648,7 @@ INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('100 g','Pate Braedt ','BRAEDT',3.20,50,'https://i.ibb.co/k3hbp7m/Pate-Braedt.webp',41);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('180 g','Pack Jamonada de Pollo + Queso Edam','BRAEDT',6.50,50,'https://i.ibb.co/MV9MMyh/Pack-Jamonada-de-Pollo-Queso-Edam.webp',41);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('100 g','Jamonada Especial Braedt','BRAEDT',2.90,50,'https://i.ibb.co/1dpYdkC/Jamonada-Especial-Braedt.webp',41);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('140 g','Chorizo Parrillero Precocido Braedt 2 und','BRAEDT',,50,'https://i.ibb.co/rHdpVbt/Chorizo-Parrillero-Precocido-Braedt.webp',41);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('140 g','Chorizo Parrillero Precocido Braedt 2 und','BRAEDT',5.00,50,'https://i.ibb.co/rHdpVbt/Chorizo-Parrillero-Precocido-Braedt.webp',41);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('100 g','Jamon de Pavita San Fernando','SAN FERNANDO',3.40,50,'https://i.ibb.co/XysTKMt/Jam-n-de-Pavita-San-Fernando.webp',41);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('25 g','Cabanossi Braedt','BRAEDT',3.20,50,'https://i.ibb.co/9qfmmv6/Cabanossi-Braedt.png',41);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('200 g','Jamonada Pizzero','BRAEDT',4.40,50,'https://i.ibb.co/Wkgtsvk/Jam-n-Pizzero.webp',41);
@@ -679,7 +679,7 @@ INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('136 gr','Chocolate Princesa Fresa Doypack','NESTLE',10.90,50,'https://i.ibb.co/bvz2DDH/Chocolate-Princesa-Fresa-Doypack.png',43);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('136 gr','Chocolate Princesa Fresa Barra','NESTLE',1.60,50,'https://i.ibb.co/bmL5rvQ/Chocolate-Princesa-Fresa-Barra.webp',43);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('1 Unidad','Barra de Chocolate Snickers Peanut Butter','SNICKERS',5.00,50,'https://i.ibb.co/HH9Y4rQ/Barra-de-Chocolate-Snickers-Peanut-Butter.webp',43);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('37.5 g','Chocolate Ferrero Rocher','FERRERO ROCHE',7,50,50,'https://i.ibb.co/RSPLQZD/Chocolate-Ferrero-Rocher.webp',43);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('37.5 g','Chocolate Ferrero Rocher','FERRERO ROCHE',7.50,50,'https://i.ibb.co/RSPLQZD/Chocolate-Ferrero-Rocher.webp',43);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('50 g','Chocolate Sublime Almendras','NESTLE',2.70,50,'https://i.ibb.co/DwqC13C/Chocolate-Sublime-Almendras.png',43);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('102 gr','Chocolate Carezza Bombones box','COSTA',10.90,50,'https://i.ibb.co/3mRzjg6/Chocolate-Carezza-Bombones-box.png',43);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('96 gr' ,'Chocolate Vizzio Bombones box','COSTA',10.90,50,'https://i.ibb.co/ysTTJBL/Chocolate-Vizzio-Bombones.png',43);
@@ -702,7 +702,7 @@ INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('6x38 g','Sixpack Galleta Blackout','GN',2.00,50,'https://i.ibb.co/NsbxmKF/Sixpack-Galleta-Blackout.png',44);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('43.5 gr','Galleta Casino Black Trufa','VICTORIA',1.00,50,'https://i.ibb.co/c8SmXmD/Galleta-Casino-Black-Trufa.png',44);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('43.5 gr','Galleta Casino Black Rollo De Canela','VICTORIA',1.00,50,'https://i.ibb.co/qjkqBTS/Galleta-Casino-Black-Rollo-De-Canela.png',44);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('80 gr','Galleta Salmitas' 'SALMAS',5.00,50,'https://i.ibb.co/LJRQtGy/Galleta-Salmitas.png',44);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('80 gr','Galleta Salmitas','SALMAS',5.00,50,'https://i.ibb.co/LJRQtGy/Galleta-Salmitas.png',44);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('20 und','Galleta Nubbe Agua Caja','SAN JORGE',6.90,50,'https://i.ibb.co/h9fK5t7/Galleta-Nubbe-Agua-Caja.png',44);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('126 gr','Galleta Oreo Pastel Rollo','OREO',2.70,50,'https://i.ibb.co/Wz2jCFc/Galleta-Oreo-Pastel-Rollo.png',44);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('78 gr','Wafer Bauducco Vainilla','BAUDUCCO',2.20,50,'https://i.ibb.co/wWFf9Lq/Wafer-Bauducco-Vainilla.png',44);
@@ -732,19 +732,19 @@ INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_
 
 
 --FAMILIARES
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('130 ml' 'Helado frio rico vainilla helado' 'DONOFRIO',4.00,50,'https://i.ibb.co/StX9gxw/Helado-frio-rico-vainilla-helado.png',46);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('216 ml' 'Helado Grand Prix Bombones','DONOFRIO',11.00,50,'https://i.ibb.co/3pFsw1N/Helado-Grand-Prix-Bombones.png',46);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('130 ml','Helado frio rico vainilla helado' 'DONOFRIO',4.00,50,'https://i.ibb.co/StX9gxw/Helado-frio-rico-vainilla-helado.png',46);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('216 ml','Helado Grand Prix Bombones','DONOFRIO',11.00,50,'https://i.ibb.co/3pFsw1N/Helado-Grand-Prix-Bombones.png',46);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('112 ml','Helado Donofrio Sandwich Vainilla','DONOFRIO',3.30,50,'https://i.ibb.co/8sqhryL/Helado-donofrio-sandwich-vainilla.png',46);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('1 L','Helado Donofrio Sandwich Vainilla','DONOFRIO',14.90,50,'https://i.ibb.co/k3VKT6C/Helado-Donofrio-Sandwich-Vainilla.png',46);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('920 ml','Helado Donofrio Peziduri Alfajor','DONOFRIO',14.90,50,'https://i.ibb.co/b1Pj4w0/Helado-Donofrio-Peziduri-Alfajor.png',46);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('75 ml','Helado Donofrio Sublime DONOFRIO',2.80,50,'https://i.ibb.co/TMjbxzK/Helado-Donofrio-Sublime.png',46);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('75 ml','Helado Donofrio Sublime', 'DONOFRIO',2.80,50,'https://i.ibb.co/TMjbxzK/Helado-Donofrio-Sublime.png',46);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('930 ml','Helado Donofrio Peziduri Chocochips Cremoso','DONOFRIO',12.90,50,'https://i.ibb.co/bbFsRNC/Helado-Donofrio-Peziduri-Chocochips-Cremoso.png',46);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('930 ml','Helado Donofrio Peziduri Tricolor Cremoso DONOFRIO',12.90,50,'https://i.ibb.co/ySWpdp1/Helado-Donofrio-Peziduri-Tricolor-Cremoso.png',46);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('930 ml','Helado Donofrio Peziduri Vainilla Cremoso,DONOFRIO',12.90,50,'https://i.ibb.co/HzqMPx7/Helado-Donofrio-Peziduri-Vainilla-Cremoso.png',46);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('920 ml','Helado Donofrio Peziduri Brownie DONOFRIO',14.90,50,'https://i.ibb.co/znYnqXq/Helado-Donofrio-Peziduri-Brownie.png',46);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('930 ml','Helado Donofrio Peziduri Tricolor Cremoso','DONOFRIO',12.90,50,'https://i.ibb.co/ySWpdp1/Helado-Donofrio-Peziduri-Tricolor-Cremoso.png',46);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('930 ml','Helado Donofrio Peziduri Vainilla Cremoso','DONOFRIO',12.90,50,'https://i.ibb.co/HzqMPx7/Helado-Donofrio-Peziduri-Vainilla-Cremoso.png',46);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('920 ml','Helado Donofrio Peziduri Brownie','DONOFRIO',14.90,50,'https://i.ibb.co/znYnqXq/Helado-Donofrio-Peziduri-Brownie.png',46);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('89 ml','Helado Donofrio Sin Parar centro liq Cookie Brownie','DONOFRIO',4.60,50,'https://i.ibb.co/8xSCYwK/Helado-Donofrio-Sin-Parar-centro-liq-Cookie-Brownie.png',46);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('89 ml','Helado sin parar centro liquido cookies n cream','DONOFRIO',4.60,50,'https://i.ibb.co/8xSCYwK/Helado-Donofrio-Sin-Parar-centro-liq-Cookie-Brownie.png',46);
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('1 lt','Helado Artika Premium Algarrobina' ,'ARTIKA',12.90,50,'https://i.ibb.co/526XwGp/Helado-Artika-Premium-Algarrobina.png',46);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('1 lt','Helado Artika Premium Algarrobina','ARTIKA',12.90,50,'https://i.ibb.co/526XwGp/Helado-Artika-Premium-Algarrobina.png',46);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('1 L','Helado Artika Chocolate Con Pasta Pura De Cacao','ARTIKA',13.90,50,'https://i.ibb.co/DbrdRf1/Helado-Artika-Chocolate-Con-Pasta-Pura-De-Cacao.png',46);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('1 L','Helado Artika Chocochip','ARTIKA',10.90,50,'https://i.ibb.co/1shsP7C/Helado-Artika-Chocochip.png',46);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('170 ml','Helado Donofrio Sin Parar Lucuma','DORINA',4.00,50,'https://i.ibb.co/QC4QzXS/Helado-Donofrio-Sin-Parar-Lucuma.png',46);
@@ -755,15 +755,15 @@ INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_
 
 
 --HAMBURGUESA Y NUGGETS
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('10 und','Nuggets de Pollo San Fernando Bolsa','SAN FERNANDO',4.50,50,'https://i.ibb.co/HG8mtHG/Nuggets-de-Pollo-San-Fernando-Bolsa.webp'
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('14 und','Hamburguesa de Pollo San Fernando La Super Rica','SAN FERNANDO',7.50,50,'https://i.ibb.co/X312qZr/Hamburguesa-de-Pollo-San-Fernando-La-Super-Rica.webp'
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('14 und','Hamburguesa de Carne San Fernando La Super','SAN FERNANDO',8.50,50,'https://i.ibb.co/sgqp43j/Hamburguesa-de-Carne-San-Fernando-La-Super.webp'
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('13 und','Nuggets Pechuga de Pollo Redondos Bolsa','REDONDOS',5.90,50,'https://i.ibb.co/N2dbL9B/Hamburguesa-de-Pollo-Redondos-Bolsa.webp'
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('14 und','Hamburguesa de Pollo Redondos Bolsa','REDONDOS',8.90,50,'https://i.ibb.co/nb3KMsF/Nuggets-Pechuga-de-Pollo-Redondos-Bolsa.webp'
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('10 und','Nuggets de Pollo San Fernando Bolsa','SAN FERNANDO',4.50,50,'https://i.ibb.co/HG8mtHG/Nuggets-de-Pollo-San-Fernando-Bolsa.webp',48)
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('14 und','Hamburguesa de Pollo San Fernando La Super Rica','SAN FERNANDO',7.50,50,'https://i.ibb.co/X312qZr/Hamburguesa-de-Pollo-San-Fernando-La-Super-Rica.webp',48)
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('14 und','Hamburguesa de Carne San Fernando La Super','SAN FERNANDO',8.50,50,'https://i.ibb.co/sgqp43j/Hamburguesa-de-Carne-San-Fernando-La-Super.webp',48)
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('13 und','Nuggets Pechuga de Pollo Redondos Bolsa','REDONDOS',5.90,50,'https://i.ibb.co/N2dbL9B/Hamburguesa-de-Pollo-Redondos-Bolsa.webp',48)
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('14 und','Hamburguesa de Pollo Redondos Bolsa','REDONDOS',8.90,50,'https://i.ibb.co/nb3KMsF/Nuggets-Pechuga-de-Pollo-Redondos-Bolsa.webp',48)
 
 
 --PARRILLA
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id)VALUES('1 Unidad','Mechero Inflamable Braza','BRAZA',3.60,50,'https://i.ibb.co/sPNW2LV/Mechero-Inflamable-Braza.png',48);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id)VALUES('1 Unidad','Mechero Inflamable Braza','BRAZA',3.60,50,'https://i.ibb.co/sPNW2LV/Mechero-Inflamable-Braza.png',49);
 
 
 --LIMPEZA DEL HOGAR

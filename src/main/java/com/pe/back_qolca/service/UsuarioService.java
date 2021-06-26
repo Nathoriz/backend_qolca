@@ -24,15 +24,29 @@ public class UsuarioService {
 
     public Usuario getUsuario(Long id){return repository.findById(id).orElse(null);}
 
-    public void addUsuario(Usuario usuario){
-        Optional<Usuario> usuarioByEmail = repository.findUsuarioByEmail(usuario.getEmail());
+//    public void signUp(Usuario usuario){
+//        Optional<Usuario> usuarioByEmail = repository.findUsuarioByEmail(usuario.getEmail());
+//
+//        if (usuarioByEmail.isPresent()){
+//            throw new IllegalStateException("El email se encuentra registrado");
+//        }
+//        usuario.setEstado("Active");
+//        repository.save(usuario);
+//        carritoService.addCarrito(new Carrito(null,usuario));
+//    }
 
+//    Prueba
+    public ResponseEntity<?> signUp(Usuario usuario){
+        Map<String, Object> resp = new HashMap<>();
+        Optional<Usuario> usuarioByEmail = repository.findUsuarioByEmail(usuario.getEmail());
         if (usuarioByEmail.isPresent()){
-            throw new IllegalStateException("El email se encuentra registrado");
+            resp.put("Message","El email ingresado ya se encuentra registrado");
         }
         usuario.setEstado("Active");
+        resp.put("Message","El usuario ha sido registrado");
         repository.save(usuario);
         carritoService.addCarrito(new Carrito(null,usuario));
+        return new ResponseEntity<>(resp,HttpStatus.CREATED);
     }
 
     public ResponseEntity<?> login(Login login){

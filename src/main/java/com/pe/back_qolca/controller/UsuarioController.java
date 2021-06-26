@@ -25,9 +25,15 @@ public class UsuarioController {
         return service.login(login);
     }
 
+//    @PostMapping("/signup")
+//    public void addUsuario(@RequestBody Usuario usuario){
+//        service.signUp(usuario);
+//    }
+
+
     @PostMapping("/signup")
-    public void addUsuario(@RequestBody Usuario usuario){
-        service.addUsuario(usuario);
+    public ResponseEntity<?> addUsuario(@RequestBody Usuario usuario){
+        return service.signUp(usuario);
     }
 
     @PutMapping(path="/{usuarioid}")
