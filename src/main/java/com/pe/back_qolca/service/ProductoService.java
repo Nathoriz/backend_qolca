@@ -30,4 +30,10 @@ public class ProductoService {
     public List<Producto> getProductosByNombreOrMarca(String nombre, String marca){
         return repository.findAllByNombreContainsOrMarcaContains(nombre,marca);
     }
+    public List<Producto> getProductosBySubcategoriaAndNombre(Long id,String nombre){
+        return repository.findAllBySubcategoria_IdAndNombreContains(id,nombre);
+    }
+    public List<Producto> getProductosByCategoriaAndNombre(Long id,String nombre){
+        return repository.findAllBySubcategoria_Categoria_IdAndNombreContains(id,nombre);
+    }
 }

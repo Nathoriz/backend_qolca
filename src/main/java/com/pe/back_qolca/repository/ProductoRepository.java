@@ -11,4 +11,6 @@ public interface ProductoRepository extends JpaRepository<Producto,Long> {
     public List<Producto> findAllBySubcategoria_Id(Long id);
     public List<Producto> findAllBySubcategoria_Categoria_Id(Long id);
     public List<Producto> findAllByNombreContainsOrMarcaContains(String nombre, String marca);
+    public List<Producto> findAllBySubcategoria_IdAndNombreContains(Long id,String nombre);
+    public List<Producto> findAllBySubcategoria_Categoria_IdAndNombreContains(Long id, String nombre);
 }

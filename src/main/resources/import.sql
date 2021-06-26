@@ -732,7 +732,7 @@ INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_
 
 
 --FAMILIARES
-INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('130 ml','Helado frio rico vainilla helado' 'DONOFRIO',4.00,50,'https://i.ibb.co/StX9gxw/Helado-frio-rico-vainilla-helado.png',46);
+INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('130 ml','Helado frio rico vainilla helado', 'DONOFRIO',4.00,50,'https://i.ibb.co/StX9gxw/Helado-frio-rico-vainilla-helado.png',46);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('216 ml','Helado Grand Prix Bombones','DONOFRIO',11.00,50,'https://i.ibb.co/3pFsw1N/Helado-Grand-Prix-Bombones.png',46);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('112 ml','Helado Donofrio Sandwich Vainilla','DONOFRIO',3.30,50,'https://i.ibb.co/8sqhryL/Helado-donofrio-sandwich-vainilla.png',46);
 INSERT INTO producto(descripcion,marca,nombre,precio,stock,url_img,subcategoria_id) VALUES('1 L','Helado Donofrio Sandwich Vainilla','DONOFRIO',14.90,50,'https://i.ibb.co/k3VKT6C/Helado-Donofrio-Sandwich-Vainilla.png',46);

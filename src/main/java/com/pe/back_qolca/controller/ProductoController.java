@@ -3,10 +3,7 @@ package com.pe.back_qolca.controller;
 import com.pe.back_qolca.entity.Producto;
 import com.pe.back_qolca.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -41,8 +38,18 @@ public class ProductoController {
         return service.getProductosBySubcategoria(id);
     }
 
-    @GetMapping("buscar/{nombreOrmarca}")
-    public List<Producto> getProductosByNombreOrMarca(@PathVariable("nombreOrmarca") String nombreOrmarca){
+    @GetMapping("/buscar")
+    public List<Producto> getProductosByNombreOrMarca(String nombreOrmarca){
         return service.getProductosByNombreOrMarca(nombreOrmarca,nombreOrmarca);
+    }
+
+    @GetMapping("buscar/subcategoria/{id}")
+    public List<Producto> getProductosBySubcategoriaAndNombre(@PathVariable("id") Long id, String nombre){
+        return service.getProductosBySubcategoriaAndNombre(id,nombre);
+    }
+
+    @GetMapping("buscar/categoria/{id}")
+    public List<Producto> getProductosByCategoriaAndNombre(@PathVariable("id") Long  id,  String nombre){
+        return service.getProductosByCategoriaAndNombre(id,nombre);
     }
 }
