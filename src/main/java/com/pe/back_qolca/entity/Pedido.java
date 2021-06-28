@@ -18,6 +18,8 @@ public class Pedido {
     @ManyToOne
     private Usuario usuario;
 
-    @Column
+    @ManyToOne
+    private Direccion direccion;
+
     private double total;
 }

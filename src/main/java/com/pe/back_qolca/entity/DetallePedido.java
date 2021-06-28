@@ -21,9 +21,7 @@ public class DetallePedido {
     @ManyToOne
     private Producto producto;
 
-    @Column
     private int cantidad;
 
-    @Column
     private double total;
 }

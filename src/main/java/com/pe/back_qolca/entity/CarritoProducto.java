@@ -17,10 +17,8 @@ public class CarritoProducto {
     @ManyToOne
     private Producto producto;
 
-    @Column
     private int cantidad;
 
-    @Column
     private String selected;
 
 //    @Column

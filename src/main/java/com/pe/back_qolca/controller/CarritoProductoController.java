@@ -3,6 +3,7 @@ package com.pe.back_qolca.controller;
 import com.pe.back_qolca.entity.CarritoProducto;
 import com.pe.back_qolca.service.CarritoProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -45,8 +46,14 @@ public class CarritoProductoController {
     }
 
     @DeleteMapping("/eliminar/{id}")
-    public void deleteCarritoProducto(
+    public ResponseEntity<?> deleteCarritoProducto(
             @PathVariable("id") Long id){
-        service.deleteCarritoProducto(id);
+       return service.deleteCarritoProducto(id);
+    }
+
+    @DeleteMapping("/eliminar/usuario/{id}")
+    public ResponseEntity<?> deleteAllCarritoProducto(
+            @PathVariable("id") Long id){
+        return service.deleteAllByUsuario(id);
     }
 }

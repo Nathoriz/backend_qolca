@@ -11,8 +11,10 @@ import org.springframework.stereotype.Service;
 public class CarritoService {
     private final CarritoRepository repository;
 
+    public Carrito getCarritoByUsuario(Long id){return repository.findCarritoByUsuario_Id(id);}
     public void addCarrito(Carrito carrito){
         repository.save(carrito);
     }
+
 }
 
