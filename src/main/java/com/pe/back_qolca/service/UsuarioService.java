@@ -110,17 +110,20 @@ public class UsuarioService {
     }
 
     @Transactional
-    public ResponseEntity<?> updateUsuario(Long usuarioId, String name, String apellido){
+    public ResponseEntity<?> updateUsuario(Long usuarioId, String name, String apellido,String direccion,String numero){
         Map<String, Object> resp = new HashMap<>();
         Usuario usuario = repository.findById(usuarioId)
                 .orElseThrow(()-> new IllegalStateException("El usuario con id " + usuarioId + " no existe"));
 
-        if(Objects.equals(usuario.getNombre(), name) && Objects.equals(usuario.getApellido(), apellido)) {
+        if(Objects.equals(usuario.getNombre(), name) && Objects.equals(usuario.getApellido(), apellido) &&
+        Objects.equals(usuario.getDireccion(), direccion)  && Objects.equals(usuario.getNumero(), numero)) {
             resp.put("Mensaje","No se pudo realizar la petición, los datos ingresados es igual a su información actual");
             return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
         }else{
             usuario.setNombre(capitalize(name));
             usuario.setApellido(capitalize(apellido));
+            usuario.setDireccion(capitalize(direccion));
+            usuario.setNumero(numero);
             resp.put("Mensaje","Sus datos se actualizaron correctamente");
             return new ResponseEntity<>(resp, HttpStatus.OK);
         }

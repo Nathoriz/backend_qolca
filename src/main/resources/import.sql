@@ -1,6 +1,6 @@
 -- USUARIO
-INSERT INTO usuario(apellido,contrasenia,email,estado,nombre) VALUES ('Ortiz Diaz','123456789','natalyortiz.401@gmail.com','Active', 'Melissa Nataly');
-INSERT INTO usuario(apellido,contrasenia,email,estado,nombre) VALUES ('Soto Calderon','987654321','dkeykoc.2603@gmail.com','Active', 'Keyko Dannysi');
+INSERT INTO usuario(apellido,contrasenia,direccion,email,estado,nombre,numero) VALUES ('Ortiz Diaz','123456789','Av. Alexander Valdez # 95093 Dpto. 966','natalyortiz.401@gmail.com','Active', 'Melissa Nataly','923443695');
+INSERT INTO usuario(apellido,contrasenia,direccion,email,estado,nombre,numero) VALUES ('Soto Calderon','987654321','Av. Isaac Ulloa # 3311 Dpto. 670','dkeykoc.2603@gmail.com','Active', 'Keyko Dannysi','986566212');
 
 -- CARRITO
 INSERT INTO carrito(usuario_id) VALUES (1);

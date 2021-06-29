@@ -20,6 +20,10 @@ public class Usuario {
     @Column(nullable = false, unique = true)
     private String email;
 
+    private String direccion;
+
+    private String numero;
+
     private String contrasenia;
 
     private String estado;

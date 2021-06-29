@@ -18,8 +18,11 @@ public class Pedido {
     @ManyToOne
     private Usuario usuario;
 
-    @ManyToOne
-    private Direccion direccion;
+    private String persona;
+
+    private String direccion;
+
+    private String numero;
 
     private double total;
 }

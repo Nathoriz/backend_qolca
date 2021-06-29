@@ -31,16 +31,21 @@ public class CarritoProductoService {
 //            repository.save(carrito_producto);
 //    }
 
+//    @Transactional
+//    public void addCarrritoProducto(CarritoProducto carrito_producto){
+//        Optional<CarritoProducto> carritoProductoOptional = Optional.ofNullable(repository.findCarrito_ProductoByProducto_Id(carrito_producto.getProducto().getId()));
+//
+//        if(carritoProductoOptional.isPresent()){
+//            CarritoProducto productoExist = repository.findCarrito_ProductoByProducto_Id(carrito_producto.getProducto().getId());
+//              productoExist.setCantidad(productoExist.getCantidad()+carrito_producto.getCantidad());
+//        }else {
+//            repository.save(carrito_producto);
+//        }
+//    }
+
     @Transactional
     public void addCarrritoProducto(CarritoProducto carrito_producto){
-        Optional<CarritoProducto> carritoProductoOptional = Optional.ofNullable(repository.findCarrito_ProductoByProducto_Id(carrito_producto.getProducto().getId()));
-
-        if(carritoProductoOptional.isPresent()){
-            CarritoProducto productoExist = repository.findCarrito_ProductoByProducto_Id(carrito_producto.getProducto().getId());
-              productoExist.setCantidad(productoExist.getCantidad()+carrito_producto.getCantidad());
-        }else {
-            repository.save(carrito_producto);
-        }
+        repository.save(carrito_producto);
     }
 
     @Transactional
