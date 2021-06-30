@@ -3,6 +3,7 @@ package com.pe.back_qolca.controller;
 import com.pe.back_qolca.entity.Producto;
 import com.pe.back_qolca.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -40,7 +41,7 @@ public class ProductoController {
 
     @GetMapping("/buscar")
     public List<Producto> getProductosByNombreOrMarca(String nombreOrmarca){
-        return service.getProductosByNombreOrMarca(nombreOrmarca,nombreOrmarca);
+            return service.getProductosByNombreOrMarca(nombreOrmarca,nombreOrmarca);
     }
 
     @GetMapping("buscar/subcategoria/{id}")

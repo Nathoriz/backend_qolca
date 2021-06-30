@@ -5,6 +5,7 @@ import com.pe.back_qolca.entity.Usuario;
 import com.pe.back_qolca.repository.UsuarioRepository;
 import com.pe.back_qolca.utils.MHelpers;
 import com.pe.back_qolca.utils.dto.Login;
+import com.pe.back_qolca.utils.dto.Signup;
 import com.pe.back_qolca.utils.dto.UsuarioInfo;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
@@ -26,42 +27,45 @@ public class UsuarioService {
 
     public Usuario getUsuario(Long id){return repository.findById(id).orElse(null);}
 
-    public ResponseEntity<?> signUp(Usuario usuario){
+    public ResponseEntity<?> signUp(Signup signup){
         Map<String, Object> resp = new HashMap<>();
         String passwordFormat = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}";
         String emailFormat="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
-        Optional<Usuario> usuarioByEmail = repository.findUsuarioByEmail(usuario.getEmail());
+        Optional<Usuario> usuarioByEmail = Optional.ofNullable(repository.findUsuarioByEmail(signup.getEmail()).orElse(null));
+
         if (usuarioByEmail.isPresent()){
             resp.put("Mensaje","El email ingresado ya se encuentra registrado");
             return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-        }if(usuario.getNombre().isEmpty() && usuario.getApellido().isEmpty() && usuario.getEmail().isEmpty() && usuario.getContrasenia().isEmpty()){
+        }if(signup.getNombre().isEmpty() && signup.getApellido().isEmpty() && signup.getEmail().isEmpty() && signup.getContrasenia().isEmpty()){
             resp.put("Mensaje","Debe llenar todos los campos");
             return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
         }
-        else if(usuario.getNombre().isEmpty()){
+        else if(signup.getNombre().isEmpty()){
             resp.put("Mensaje","Ingrese su nombre");
             return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-        }else if(usuario.getApellido().isEmpty()) {
+        }else if(signup.getApellido().isEmpty()) {
             resp.put("Mensaje","Ingrese su apellido");
             return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-        }else if(usuario.getEmail().isEmpty()) {
+        }else if(signup.getEmail().isEmpty()) {
             resp.put("Mensaje","Ingrese su email");
             return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-//        }else if(!usuario.getEmail().matches(emailFormat)){
-//            resp.put("Mensaje","El email ingresado no es valido");
-//            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-        }else if(usuario.getContrasenia().isEmpty()) {
+        }else if(!signup.getEmail().matches(emailFormat)){
+            resp.put("Mensaje","El email ingresado no es valido");
+            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+        }else if(signup.getContrasenia().isEmpty()) {
             resp.put("Mensaje","Ingrese su contrasenia");
             return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-//        } else if(!usuario.getContrasenia().matches(passwordFormat)){
-//            resp.put("Mensaje","La contraseña debe ser mayor a 8 carácteres, tener al menos un dígito, caracter especial, mayuscula, no se permite espacios.");
-//            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
+        } else if(!signup.getContrasenia().matches(passwordFormat)){
+            resp.put("Mensaje","La contraseña debe ser mayor a 8 carácteres, tener al menos una mayuscula, un dígito y un caracter especial; No se permite espacios.");
+            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
         }else{
-            usuario.setNombre(capitalize(usuario.getNombre()));
-            usuario.setApellido(capitalize(usuario.getApellido()));
-            usuario.setEmail(usuario.getEmail().toLowerCase(Locale.ROOT));
-            usuario.setEstado("Active");
+            signup.setNombre(capitalize(signup.getNombre()));
+            signup.setApellido(capitalize(signup.getApellido()));
+            signup.setEmail(signup.getEmail().toLowerCase(Locale.ROOT));
+            signup.setEstado("Active");
+            Usuario usuario = MHelpers.modelMapper().map(signup, Usuario.class);
+
             repository.save(usuario);
             carritoService.addCarrito(new Carrito(null,usuario));
             resp.put("Mensaje","El usuario ha sido registrado");
@@ -176,6 +180,4 @@ public class UsuarioService {
         }
         return match.appendTail(strbf).toString();
     }
-
-
 }

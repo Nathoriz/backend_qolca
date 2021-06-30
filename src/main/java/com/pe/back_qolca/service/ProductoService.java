@@ -3,6 +3,8 @@ package com.pe.back_qolca.service;
 import com.pe.back_qolca.entity.Producto;
 import com.pe.back_qolca.repository.ProductoRepository;
 import lombok.Data;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,12 +30,18 @@ public class ProductoService {
     }
 
     public List<Producto> getProductosByNombreOrMarca(String nombre, String marca){
-        return repository.findAllByNombreContainsOrMarcaContains(nombre,marca);
+            List<Producto> list= repository.findAllByNombreContainsOrMarcaContains(nombre,marca);
+            if(list.isEmpty()) throw new IllegalStateException("No se encontraron coincidencias");
+            return list;
     }
     public List<Producto> getProductosBySubcategoriaAndNombre(Long id,String nombre){
-        return repository.findAllBySubcategoria_IdAndNombreContains(id,nombre);
+        List<Producto> list= repository.findAllBySubcategoria_IdAndNombreContains(id,nombre);
+        if(list.isEmpty()) throw new IllegalStateException("No se encontraron coincidencias");
+        return list;
     }
     public List<Producto> getProductosByCategoriaAndNombre(Long id,String nombre){
-        return repository.findAllBySubcategoria_Categoria_IdAndNombreContains(id,nombre);
+        List<Producto> list= repository.findAllBySubcategoria_Categoria_IdAndNombreContains(id,nombre);
+        if(list.isEmpty()) throw new IllegalStateException("No se encontraron coincidencias");
+        return list;
     }
 }

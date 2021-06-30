@@ -3,6 +3,7 @@ package com.pe.back_qolca.controller;
 import com.pe.back_qolca.entity.Usuario;
 import com.pe.back_qolca.service.UsuarioService;
 import com.pe.back_qolca.utils.dto.Login;
+import com.pe.back_qolca.utils.dto.Signup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +32,7 @@ public class UsuarioController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<?> addUsuario(@RequestBody Usuario usuario){
+    public ResponseEntity<?> addUsuario(@RequestBody Signup usuario){
         return service.signUp(usuario);
     }
 
