@@ -39,10 +39,10 @@ public class UsuarioController {
     @PutMapping(path="/modificar/{usuarioid}")
     public ResponseEntity<?> updateUsuario(
             @PathVariable("usuarioid") Long usuarioID,
-            @RequestParam(required = false) String name,
-            @RequestParam(required = false) String apellido,
-            @RequestParam(required = false) String direccion,
-            @RequestParam(required = false) String numero){
+            String name,
+            String apellido,
+            String direccion,
+            String numero){
         return service.updateUsuario(usuarioID,name,apellido,direccion,numero);
     }
 

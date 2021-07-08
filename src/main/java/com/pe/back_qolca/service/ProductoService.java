@@ -3,8 +3,6 @@ package com.pe.back_qolca.service;
 import com.pe.back_qolca.entity.Producto;
 import com.pe.back_qolca.repository.ProductoRepository;
 import lombok.Data;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
