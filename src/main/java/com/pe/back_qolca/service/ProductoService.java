@@ -27,8 +27,8 @@ public class ProductoService {
         return repository.findAllBySubcategoria_Categoria_Id(id);
     }
 
-    public List<Producto> getProductosByNombreOrMarca(String nombre, String marca){
-            List<Producto> list= repository.findAllByNombreContainsOrMarcaContains(nombre,marca);
+    public List<Producto> getProductosByNombre(String nombre){
+            List<Producto> list= repository.findAllByNombreContains(nombre);
             if(list.isEmpty()) throw new IllegalStateException("No se encontraron coincidencias");
             return list;
     }

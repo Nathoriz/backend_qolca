@@ -1,5 +1,6 @@
 package com.pe.back_qolca.service;
 
+import com.pe.back_qolca.config.error.exceptions.BadRequest;
 import com.pe.back_qolca.entity.Carrito;
 import com.pe.back_qolca.entity.Usuario;
 import com.pe.back_qolca.repository.UsuarioRepository;
@@ -77,39 +78,21 @@ public class UsuarioService {
         String email = login.getEmail().toLowerCase(Locale.ROOT);
         String password = login.getContrasenia();
         Map<String, Object> resp = new HashMap<>();
-        if(email.isEmpty()){
-            resp.put("error","* Ingrese el email");
-            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-        }
-        if(password.isEmpty()) {
-            resp.put("error","* Ingrese la contraseña");
-            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-        }
+        if(email.isEmpty()) throw new BadRequest("* Ingrese el email");
+        if(password.isEmpty()) throw new BadRequest("* Ingrese la contraseña");
         if(repository.existsUsuarioByEmailAndContrasenia(email, password)){
             if(repository.findUsuarioByEmail(email).get().getEstado().equals("Active")){
                 Usuario userlog = repository.findUsuarioByEmail(email).orElse(null);
                 UsuarioInfo usuarioInfo = MHelpers.modelMapper().map(userlog, UsuarioInfo.class);
-                resp.put("Mensaje", "Credenciales válidas");
+                resp.put("mensaje", "Credenciales válidas");
                 resp.put("Usuario", usuarioInfo);
                 return new ResponseEntity<>(resp, HttpStatus.OK);
-            }else if(repository.findUsuarioByEmail(email).get().getEstado().equals("Inactive")){
-                resp.put("error", "* El usuario ya no se encuentra activo");
-                return new ResponseEntity<>(resp, HttpStatus.UNAUTHORIZED);
-            }else{
-                resp.put("error", "Se generó un error, vuelva a intentarlo más tarde :c");
-                return new ResponseEntity<>(resp, HttpStatus.UNAUTHORIZED);
-            }
+            }else if(repository.findUsuarioByEmail(email).get().getEstado().equals("Inactive")) throw new BadRequest("* El usuario ya no se encuentra activo");
+            else throw new BadRequest("Se generó un error, vuelva a intentarlo más tarde :c");
         }else {
-            if(repository.existsUsuarioByEmail(email)) {
-                resp.put("error", "* Su contraseña es incorrecta");
-                return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-            }else if(!repository.existsUsuarioByEmailAndContrasenia(email,password)) {
-                resp.put("error", "* El usuario o contraseña son incorrectos");
-                return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-            }else{
-                resp.put("error", "Se generó un error, vuelva a intentarlo más tarde :(");
-                return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-            }
+            if(repository.existsUsuarioByEmail(email)) throw new BadRequest("* Su contraseña es incorrecta");
+            if(!repository.existsUsuarioByEmailAndContrasenia(email,password)) throw new BadRequest("* El usuario o contraseña son incorrectos");
+            else throw new BadRequest("Se generó un error, vuelva a intentarlo más tarde :(");
         }
     }
 

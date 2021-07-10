@@ -40,8 +40,8 @@ public class ProductoController {
     }
 
     @GetMapping("/buscar")
-    public List<Producto> getProductosByNombreOrMarca(String nombreOrmarca){
-            return service.getProductosByNombreOrMarca(nombreOrmarca,nombreOrmarca);
+    public List<Producto> getProductosByNombre(String nombre){
+            return service.getProductosByNombre(nombre);
     }
 
     @GetMapping("buscar/subcategoria/{id}")
