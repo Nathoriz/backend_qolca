@@ -35,33 +35,15 @@ public class UsuarioService {
 
         Optional<Usuario> usuarioByEmail = Optional.ofNullable(repository.findUsuarioByEmail(signup.getEmail()).orElse(null));
 
-        if (usuarioByEmail.isPresent()){
-            resp.put("error","* El email ingresado ya se encuentra registrado");
-            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-        }
-        if(signup.getNombre().isEmpty() && signup.getApellido().isEmpty() && signup.getEmail().isEmpty() && signup.getContrasenia().isEmpty()){
-            resp.put("error","* Debe llenar todos los campos");
-            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-        }
-        else if(signup.getNombre().isEmpty()){
-            resp.put("error","* Ingrese su nombre");
-            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-        }else if(signup.getApellido().isEmpty()) {
-            resp.put("error","* Ingrese su apellido");
-            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-        }else if(signup.getEmail().isEmpty()) {
-            resp.put("error","* Ingrese su email");
-            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-        }else if(!signup.getEmail().matches(emailFormat)){
-            resp.put("error","* El email ingresado no es valido");
-            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-        }else if(signup.getContrasenia().isEmpty()) {
-            resp.put("error","* Ingrese su contrasenia");
-            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-        } else if(!signup.getContrasenia().matches(passwordFormat)){
-            resp.put("error","* La contraseña debe ser mayor a 8 carácteres, tener al menos una mayuscula, un dígito y un caracter especial; No se permite espacios.");
-            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-        }else{
+        if (usuarioByEmail.isPresent()) throw new BadRequest("* El email ingresado ya se encuentra registrado");
+        else if(signup.getNombre().isEmpty() && signup.getApellido().isEmpty() && signup.getEmail().isEmpty() && signup.getContrasenia().isEmpty()) throw new BadRequest("* Debe llenar todos los campos");
+        else if(signup.getNombre().isEmpty()) throw new BadRequest("* Ingrese su nombre");
+        else if(signup.getApellido().isEmpty()) throw new BadRequest("* Ingrese su apellido");
+        else if(signup.getEmail().isEmpty()) throw new BadRequest("* Ingrese su email");
+        else if(!signup.getEmail().matches(emailFormat)) throw new BadRequest("* El email ingresado no es valido");
+        else if(signup.getContrasenia().isEmpty()) throw new BadRequest("* Ingrese su contrasenia");
+        else if(!signup.getContrasenia().matches(passwordFormat)) throw new BadRequest("* La contraseña debe ser mayor a 8 carácteres, tener al menos una mayuscula, un dígito y un caracter especial; No se permite espacios.");
+        else{
             signup.setNombre(capitalize(signup.getNombre()));
             signup.setApellido(capitalize(signup.getApellido()));
             signup.setEmail(signup.getEmail().toLowerCase(Locale.ROOT));
