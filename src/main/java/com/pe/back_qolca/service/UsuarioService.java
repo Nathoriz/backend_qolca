@@ -85,72 +85,42 @@ public class UsuarioService {
                 .orElseThrow(()-> new IllegalStateException("El usuario con id " + usuarioId + " no existe"));
 
         if(Objects.equals(usuario.getNombre(), name) && Objects.equals(usuario.getApellido(), apellido) &&
-        Objects.equals(usuario.getDireccion(), direccion)  && Objects.equals(usuario.getNumero(), numero)) {
-            resp.put("error","* Los datos ingresados es igual a su información actual");
-            return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-        }else{
-            if(!name.isEmpty()){
-                if(!esSoloLetras(name)){
-                    resp.put("error","* No introduzca datos numéricos en el campo Nombre");
-                    return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-                }
-            }
-            if(!apellido.isEmpty()){
-                if(!esSoloLetras(apellido)){
-                    resp.put("error","* No introduzca datos numéricos en el campo Apellido");
-                    return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-                }
-            }
+        Objects.equals(usuario.getDireccion(), direccion)  && Objects.equals(usuario.getNumero(), numero)) throw new BadRequest("* Los datos ingresados es igual a su información actual");
+        else{
             if(!numero.isEmpty()){
-                if(!numero.matches("[0-9]+")){
-                    resp.put("error","* No introduzca caracteres en el campo Número");
-                    return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-                }
+                if(!numero.matches("[0-9]+")) throw new BadRequest("* No introduzca caracteres en el campo Número");
 
-                if(numero.length() > 9){
-                    resp.put("error","* El número no puede tener más de 9 dígitos");
-                    return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-                }
+                if(numero.length() > 9) throw new BadRequest("* El número no puede tener más de 9 dígitos");
 
-                if(numero.length() < 7){
-                    resp.put("error","* El número no puede ser menor de 7 dígitos");
-                    return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-                }
+                if(numero.length() < 7) throw new BadRequest("* El número no puede ser menor de 7 dígitos");
 
-                if(numero.length() == 8){
-                    resp.put("error","* El número es invalido");
-                    return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-                }
+                if(numero.length() == 8) throw new BadRequest("* El número es invalido");
             }
 
             usuario.setNombre(capitalize(name));
             usuario.setApellido(capitalize(apellido));
             usuario.setDireccion(capitalize(direccion));
             usuario.setNumero(numero);
-
-            resp.put("Mensaje","Sus datos se actualizaron correctamente");
+            resp.put("mensaje","Sus datos se actualizaron correctamente");
             return new ResponseEntity<>(resp, HttpStatus.OK);
         }
     }
 
     @Transactional
     public ResponseEntity<?> updatePassword(Long usuarioId, String contrasenia){
+        String passwordFormat = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}";
         Map<String, Object> resp = new HashMap<>();
         Usuario usuario = repository.findById(usuarioId)
                 .orElseThrow(()-> new IllegalStateException("El usuario con id " + usuarioId + " no existe"));
         if(contrasenia != null && contrasenia.length() > 0) {
-            if(Objects.equals(usuario.getContrasenia(), contrasenia)) {
-                resp.put("error","* No puede ingresar una contraseña igual a su contraseña actual");
-                return new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-            }else {
+            if(Objects.equals(usuario.getContrasenia(), contrasenia)) throw new BadRequest("* No puede ingresar una contraseña igual a su contraseña actual");
+            if(!contrasenia.matches(passwordFormat)) throw new BadRequest("* La contraseña debe ser mayor a 8 carácteres, tener al menos una mayuscula, un dígito y un caracter especial; No se permite espacios.");
+            else {
                 usuario.setContrasenia(contrasenia);
-                resp.put("Mensaje","Su contraseña se actualizo");
+                resp.put("mensaje","Su contraseña se actualizo");
                 return  new ResponseEntity<>(resp, HttpStatus.OK);
             }
-        }else{
-            resp.put("error","* Ingrese el campo solicitado");
-            return  new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-        }
+        }else throw new BadRequest("* Ingrese el campo solicitado");
     }
 
     @Transactional
@@ -159,18 +129,13 @@ public class UsuarioService {
         Usuario usuario = repository.findById(usuarioId)
                 .orElseThrow(()-> new IllegalStateException("El usuario con id " + usuarioId + " no existe"));
 
-        if(usuario.getEstado().equals("Inactive")){
-            resp.put("error","* No puede ingresar un usuario que se encuentra inactivo");
-            return  new ResponseEntity<>(resp, HttpStatus.BAD_REQUEST);
-        }
-
+        if(usuario.getEstado().equals("Inactive")) throw new BadRequest("* No puede ingresar un usuario que se encuentra inactivo");
         usuario.setEstado("Inactive");
-        resp.put("Mensaje","El usuario se eliminó correctamente");
+        resp.put("mensaje","El usuario se eliminó correctamente");
         return  new ResponseEntity<>(resp, HttpStatus.OK);
     }
 
     // WIIII
-
     public String capitalize(String m){
         StringBuffer strbf = new StringBuffer();
         Matcher match = Pattern.compile("([a-z])([a-z]*)", Pattern.CASE_INSENSITIVE).matcher(m);
@@ -179,17 +144,5 @@ public class UsuarioService {
             match.appendReplacement(strbf, match.group(1).toUpperCase() + match.group(2).toLowerCase());
         }
         return match.appendTail(strbf).toString();
-    }
-
-    static boolean esSoloLetras(String cadena)
-    {
-        for (int i = 0; i < cadena.length(); i++)
-        {
-            char caracter = cadena.toUpperCase().charAt(i);
-            int valorASCII = (int)caracter;
-            if (valorASCII != 165 && (valorASCII < 65 || valorASCII > 90))
-                return false;
-        }
-        return true;
     }
 }
