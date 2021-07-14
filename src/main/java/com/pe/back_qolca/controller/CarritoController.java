@@ -19,7 +19,7 @@ public class CarritoController {
     }
 
     @GetMapping("/{id}")
-    public void getCarritoByUsuarioa(@PathVariable("id") Long id){
-        service.getCarritoByUsuario(id);
+    public Carrito getCarritoByUsuarioa(@PathVariable("id") Long id){
+        return service.getCarritoByUsuario(id);
     }
 }

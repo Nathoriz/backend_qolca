@@ -28,21 +28,21 @@ public class CarritoProductoController {
 
 
     @PostMapping("/añadir")
-    public void addCarritoProducto(
+    public ResponseEntity<?> addCarritoProducto(
             @RequestBody CarritoProducto carritoProducto){
-        service.addCarrritoProducto(carritoProducto);
+       return service.addCarrritoProducto(carritoProducto);
     }
 
     @PutMapping(path="/increment/{id}")
-    public void increment(
+    public ResponseEntity<?> increment(
             @PathVariable("id") Long id){
-        service.increment(id);
+        return service.increment(id);
     }
 
     @PutMapping(path="/decrement/{id}")
-    public void decrement(
+    public ResponseEntity<?> decrement(
             @PathVariable("id") Long id){
-        service.decrement(id);
+        return service.decrement(id);
     }
 
     @DeleteMapping("/eliminar/{id}")
