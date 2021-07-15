@@ -18,7 +18,7 @@ public class PedidoController {
 
     @GetMapping("/usuario/{id}")
     public List<Pedido> listarPedidosByUsuario(@PathVariable("id") Long id){
-        return service.getPedidosByUsuario(id);
+        return service.getPedidosByUsuarioAndEstado(id);
     }
 
     @GetMapping("/obtener/{id}")
@@ -34,6 +34,11 @@ public class PedidoController {
     @PostMapping("/comprar")
     public ResponseEntity<?> addPedidoProducto(@RequestBody Pedido pedido, Long idproducto, int cantidad){
         return service.addPedidoProducto(pedido,idproducto,cantidad);
+    }
+
+    @PutMapping("/pagar/{id}")
+    public ResponseEntity<?> pedidoPagado(@PathVariable("id") Long id){
+        return service.pedidoPagado(id);
     }
 
     @DeleteMapping("/eliminar/{id}")

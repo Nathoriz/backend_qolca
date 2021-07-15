@@ -21,7 +21,7 @@ public class PedidoService {
     private final CarritoProductoService carritoProductoService;
     private final ProductoService productoService;
 
-    public List<Pedido> getPedidosByUsuario(Long id){ return repository.findAllByUsuario_Id(id);}
+    public List<Pedido> getPedidosByUsuarioAndEstado(Long id){ return repository.findAllByUsuario_IdAndEstadoEquals(id,"FINALIZADO");}
 
     public Pedido getPedido(Long id){ return repository.findById(id).orElse(null); }
 
@@ -35,6 +35,7 @@ public class PedidoService {
         else if(pedido.getNumero().length() > 9) throw new BadRequest("* El número no puede tener más de 9 dígitos");
         else if(pedido.getNumero().length() < 7) throw new BadRequest("* El número no puede ser menor de 7 dígitos");
         else if(pedido.getNumero().length() == 8) throw new BadRequest("* El número es invalido");
+        else if(!pedido.getEstado().equals("EN PROCESO")) throw new BadRequest("* Se produjo un error vuelva a intentarlo más tarde");
         repository.save(pedido);
         List<CarritoProducto> productosDelCarrito = carritoProductoService.getCarritoByUserId(pedido.getUsuario().getId());
         for(int i=0; i < productosDelCarrito.size(); i++){
@@ -46,6 +47,7 @@ public class PedidoService {
             producto.setStock(producto.getStock() - cantidad);
         }
         resp.put("message","ok");
+        resp.put("id",pedido.getId());
         return  new ResponseEntity<>(resp, HttpStatus.OK);
     }
 
@@ -60,6 +62,7 @@ public class PedidoService {
         else if(pedido.getNumero().length() > 9) throw new BadRequest("* El número no puede tener más de 9 dígitos");
         else if(pedido.getNumero().length() < 7) throw new BadRequest("* El número no puede ser menor de 7 dígitos");
         else if(pedido.getNumero().length() == 8) throw new BadRequest("* El número es invalido");
+        else if(!pedido.getEstado().equals("EN PROCESO")) throw new BadRequest("* Se produjo un error vuelva a intentarlo más tarde");
         repository.save(pedido);
 
         Producto producto = productoService.getProductoById(idproducto).orElse(null);
@@ -69,6 +72,7 @@ public class PedidoService {
             detallePedidoService.addDetallePedido(detallePedido);
             producto.setStock(producto.getStock() - cantidad);
             resp.put("message","ok");
+            resp.put("id",pedido.getId());
             return  new ResponseEntity<>(resp, HttpStatus.OK);
         }else throw new BadRequest("El producto no existe");
     }
@@ -78,10 +82,22 @@ public class PedidoService {
         Map<String, Object> resp = new HashMap<>();
         Pedido pedido = repository.getById(id);
         if(pedido!=null){
+            
             detallePedidoService.deleteAllByPedido(id);
             repository.deleteById(id);
             resp.put("message","ok");
             return  new ResponseEntity<>(resp, HttpStatus.OK);
+        } else throw  new BadRequest("* El pedido no existe");
+    }
+
+    @Transactional
+    public ResponseEntity<?> pedidoPagado(Long id){
+        Map<String, Object> resp = new HashMap<>();
+        Pedido pedido = repository.getById(id);
+        if(pedido!=null){
+           pedido.setEstado("FINALIZADO");
+           resp.put("message","ok");
+           return  new ResponseEntity<>(resp, HttpStatus.OK);
         } else throw  new BadRequest("* El pedido no existe");
     }
 }

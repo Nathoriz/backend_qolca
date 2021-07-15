@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface PedidoRepository extends JpaRepository<Pedido,Long> {
-    public List<Pedido> findAllByUsuario_Id(Long id);
+    public List<Pedido> findAllByUsuario_IdAndEstadoEquals(Long id,String estado);
 }

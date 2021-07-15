@@ -27,4 +27,6 @@ public class Pedido {
     private double total;
 
     private String fecha;
+
+    private String estado;
 }

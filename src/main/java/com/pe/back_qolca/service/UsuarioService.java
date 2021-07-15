@@ -7,7 +7,6 @@ import com.pe.back_qolca.repository.UsuarioRepository;
 import com.pe.back_qolca.utils.MHelpers;
 import com.pe.back_qolca.utils.dto.Login;
 import com.pe.back_qolca.utils.dto.Signup;
-import com.pe.back_qolca.utils.dto.Update;
 import com.pe.back_qolca.utils.dto.UsuarioInfo;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
@@ -101,10 +100,6 @@ public class UsuarioService {
             if(!direccion.equals("") || !direccion.isEmpty() || direccion != null)usuario.setDireccion(direccion);
             else  usuario.setDireccion(usuario.getDireccion());
             if(!numero.equals("") || !numero.isEmpty() || numero != null){
-//                if (!numero.matches("[0-9]+")) throw new BadRequest("* No introduzca caracteres en el campo Número");
-//                else if (numero.length() > 9) throw new BadRequest("* El número no puede tener más de 9 dígitos");
-//                else if (numero.length() < 7) throw new BadRequest("* El número no puede ser menor de 7 dígitos");
-//                else if (numero.length() == 8) throw new BadRequest("* El número es invalido");
                  usuario.setNumero(numero);
             }else usuario.setNumero(usuario.getNumero());
             resp.put("message","Sus datos se actualizaron correctamente");
