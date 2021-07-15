@@ -39,11 +39,11 @@ public class UsuarioController {
     @PutMapping(path="/modificar/{usuarioid}")
     public ResponseEntity<?> updateUsuario(
             @PathVariable("usuarioid") Long usuarioID,
-            String name,
+            String nombre,
             String apellido,
             String direccion,
             String numero){
-        return service.updateUsuario(usuarioID,name,apellido,direccion,numero);
+        return service.updateUsuario(usuarioID,nombre,apellido,direccion,numero);
     }
 
     @PutMapping(path="changepassword/{usuarioid}")

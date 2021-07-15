@@ -7,6 +7,7 @@ import com.pe.back_qolca.repository.UsuarioRepository;
 import com.pe.back_qolca.utils.MHelpers;
 import com.pe.back_qolca.utils.dto.Login;
 import com.pe.back_qolca.utils.dto.Signup;
+import com.pe.back_qolca.utils.dto.Update;
 import com.pe.back_qolca.utils.dto.UsuarioInfo;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
@@ -79,28 +80,33 @@ public class UsuarioService {
     }
 
     @Transactional
-    public ResponseEntity<?> updateUsuario(Long usuarioId, String name, String apellido,String direccion,String numero){
+    public ResponseEntity<?> updateUsuario(Long usuarioID, String nombre,String apellido,String direccion,String numero){
         Map<String, Object> resp = new HashMap<>();
-        Usuario usuario = repository.findById(usuarioId)
-                .orElseThrow(()-> new IllegalStateException("El usuario con id " + usuarioId + " no existe"));
-
-        if(Objects.equals(usuario.getNombre(), name) && Objects.equals(usuario.getApellido(), apellido) &&
-        Objects.equals(usuario.getDireccion(), direccion)  && Objects.equals(usuario.getNumero(), numero)) throw new BadRequest("* Los datos ingresados es igual a su información actual");
-        else{
-            if(!numero.isEmpty()){
-                if(!numero.matches("[0-9]+")) throw new BadRequest("* No introduzca caracteres en el campo Número");
-
-                if(numero.length() > 9) throw new BadRequest("* El número no puede tener más de 9 dígitos");
-
-                if(numero.length() < 7) throw new BadRequest("* El número no puede ser menor de 7 dígitos");
-
-                if(numero.length() == 8) throw new BadRequest("* El número es invalido");
-            }
-
-            usuario.setNombre(capitalize(name));
-            usuario.setApellido(capitalize(apellido));
-            usuario.setDireccion(capitalize(direccion));
-            usuario.setNumero(numero);
+        Usuario usuario = repository.getById(usuarioID);
+        if((nombre.equals("") || nombre.isEmpty() || nombre == null) &&
+                (apellido.equals("") || apellido.isEmpty() || apellido == null) &&
+                (direccion.equals("") || direccion.isEmpty() || direccion == null) &&
+                (numero.equals("") || numero.isEmpty() || numero == null) ){
+            usuario.setNombre(usuario.getNombre());
+            usuario.setApellido(usuario.getApellido());
+            usuario.setDireccion(usuario.getDireccion());
+            usuario.setNumero(usuario.getNumero());
+            resp.put("message","Sus datos se mantuvieron");
+            return new ResponseEntity<>(resp, HttpStatus.OK);
+        }else{
+            if(!nombre.equals("") || !nombre.isEmpty() || nombre != null) usuario.setNombre(nombre);
+            else  usuario.setNombre(usuario.getNombre());
+            if(!apellido.equals("") || !apellido.isEmpty() || apellido != null) usuario.setApellido(apellido);
+            else  usuario.setApellido(usuario.getApellido());
+            if(!direccion.equals("") || !direccion.isEmpty() || direccion != null)usuario.setDireccion(direccion);
+            else  usuario.setDireccion(usuario.getDireccion());
+            if(!numero.equals("") || !numero.isEmpty() || numero != null){
+//                if (!numero.matches("[0-9]+")) throw new BadRequest("* No introduzca caracteres en el campo Número");
+//                else if (numero.length() > 9) throw new BadRequest("* El número no puede tener más de 9 dígitos");
+//                else if (numero.length() < 7) throw new BadRequest("* El número no puede ser menor de 7 dígitos");
+//                else if (numero.length() == 8) throw new BadRequest("* El número es invalido");
+                 usuario.setNumero(numero);
+            }else usuario.setNumero(usuario.getNumero());
             resp.put("message","Sus datos se actualizaron correctamente");
             return new ResponseEntity<>(resp, HttpStatus.OK);
         }

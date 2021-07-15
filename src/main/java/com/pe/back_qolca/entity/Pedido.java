@@ -25,4 +25,6 @@ public class Pedido {
     private String numero;
 
     private double total;
+
+    private String fecha;
 }

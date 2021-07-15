@@ -7,11 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @Data
@@ -30,7 +26,6 @@ public class CarritoProductoService {
     public ResponseEntity<?> addCarrritoProducto(CarritoProducto carrito_producto){
         Map<String, Object> resp = new HashMap<>();
         Optional<CarritoProducto> carritoProductoOptional = Optional.ofNullable(repository.findCarrito_ProductoByProducto_Id(carrito_producto.getProducto().getId()));
-
         if(carritoProductoOptional.isPresent()){
             CarritoProducto productoExist = repository.findCarrito_ProductoByProducto_Id(carrito_producto.getProducto().getId());
             productoExist.setCantidad(productoExist.getCantidad()+carrito_producto.getCantidad());
@@ -42,11 +37,6 @@ public class CarritoProductoService {
             return new ResponseEntity<>(resp,HttpStatus.CREATED);
         }
     }
-
-//    @Transactional
-//    public void addCarrritoProducto(CarritoProducto carrito_producto){
-//        repository.save(carrito_producto);
-//    }
 
     @Transactional
     public ResponseEntity<?> increment(Long Id){
@@ -83,6 +73,8 @@ public class CarritoProductoService {
         return new ResponseEntity<>(resp, HttpStatus.OK);
     }
 
+    //FALTA
+    @Transactional
     public ResponseEntity<?> deleteAllByUsuario(Long id){
         Map<String, Object> resp = new HashMap<>();
         repository.deleteAllByCarrito_Usuario_Id(id);

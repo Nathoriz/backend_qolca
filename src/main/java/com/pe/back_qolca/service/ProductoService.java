@@ -32,11 +32,13 @@ public class ProductoService {
             if(list.isEmpty()) throw new IllegalStateException("No se encontraron coincidencias");
             return list;
     }
+
     public List<Producto> getProductosBySubcategoriaAndNombre(Long id,String nombre){
         List<Producto> list= repository.findAllBySubcategoria_IdAndNombreContains(id,nombre);
         if(list.isEmpty()) throw new IllegalStateException("No se encontraron coincidencias");
         return list;
     }
+
     public List<Producto> getProductosByCategoriaAndNombre(Long id,String nombre){
         List<Producto> list= repository.findAllBySubcategoria_Categoria_IdAndNombreContains(id,nombre);
         if(list.isEmpty()) throw new IllegalStateException("No se encontraron coincidencias");
