@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -82,7 +83,12 @@ public class PedidoService {
         Map<String, Object> resp = new HashMap<>();
         Pedido pedido = repository.getById(id);
         if(pedido!=null){
-            
+            List<DetallePedido> detallesPedidos = detallePedidoService.getDetallePedidosByPedido(pedido.getId());
+            for(int i=0; i < detallesPedidos.size(); i++){
+                Producto producto = detallesPedidos.get(i).getProducto();
+                int cantidad = detallesPedidos.get(i).getCantidad();
+                producto.setStock(producto.getStock() + cantidad);
+            }
             detallePedidoService.deleteAllByPedido(id);
             repository.deleteById(id);
             resp.put("message","ok");
