@@ -4,11 +4,11 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-@Entity
-@Data
+//@Entity
+//@Data
 public class MetodoPago {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nombre;

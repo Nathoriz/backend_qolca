@@ -26,6 +26,7 @@ public class PedidoService {
 
     public Pedido getPedido(Long id){ return repository.findById(id).orElse(null); }
 
+    @Transactional
     public ResponseEntity<?> addPedidoCart(Pedido pedido){
         Map<String, Object> resp = new HashMap<>();
         if(pedido.getPersona().isEmpty()|| pedido.getPersona().equals("")|| pedido.getPersona() == null) throw new BadRequest("* Ingrese el nombre");
@@ -38,6 +39,7 @@ public class PedidoService {
         else if(pedido.getNumero().length() == 8) throw new BadRequest("* El número es invalido");
         else if(!pedido.getEstado().equals("EN PROCESO")) throw new BadRequest("* Se produjo un error vuelva a intentarlo más tarde");
         repository.save(pedido);
+
         List<CarritoProducto> productosDelCarrito = carritoProductoService.getCarritoByUserId(pedido.getUsuario().getId());
         for(int i=0; i < productosDelCarrito.size(); i++){
             Producto producto = productosDelCarrito.get(i).getProducto();

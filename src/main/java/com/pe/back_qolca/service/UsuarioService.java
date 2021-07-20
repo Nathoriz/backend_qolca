@@ -124,7 +124,6 @@ public class UsuarioService {
         }else throw new BadRequest("* Ingrese el campo solicitado");
     }
 
-    //FALTA IMPLEMENTAR EN EL APP
     @Transactional
     public  ResponseEntity<?> updateUsuarioStatus(Long usuarioId){
         Map<String, Object> resp = new HashMap<>();

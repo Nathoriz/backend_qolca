@@ -21,6 +21,4 @@ public class CarritoProducto {
 
     private String selected;
 
-//    @Column
-//    private String subtotal;
 }
